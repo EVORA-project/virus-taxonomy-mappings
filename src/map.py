@@ -9,11 +9,7 @@ API_BASE = "https://www.ebi.ac.uk/ols4/api"
 PAGE_SIZE = 1000
 
 def iri_to_curie(iri: str) -> str:
-    prefix = "http://purl.obolibrary.org/obo/"
-    if iri.startswith(prefix):
-        curie_part = iri[len(prefix):]
-        return curie_part.replace("_", ":")
-    return iri
+    return iri.replace("http://purl.obolibrary.org/obo/NCBITaxon_", "ncbitaxon:").replace("http://ictv.global/id/", "ictv:")
 
 def get_all_terms(ontology: str):
     terms = []
@@ -84,11 +80,11 @@ def main():
         for label in labels:
             print(f"  [{idx}/{total}] Processing: '{label}'")
             ictv_iri = term.get("iri")
-            subject_id = term.get("obo_id") or iri_to_curie(ictv_iri)
+            subject_id = iri_to_curie(ictv_iri)
             match = find_exact_ncbitaxon(label)
             if match:
                 ncbi_iri = match.get("iri")
-                object_id = match.get("obo_id") or iri_to_curie(ncbi_iri)
+                object_id = iri_to_curie(ncbi_iri)
                 object_labels = ensure_list(match.get("label", [])) + ensure_list(match.get("synonyms", []))
                 if not label.lower() in [l.lower() for l in object_labels]:
                     print(f"    ✗ OLS returned {ncbi_iri} {object_labels} as a match for '{label}' but it does not actually have that label")
