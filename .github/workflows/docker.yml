@@ -30,5 +30,5 @@ jobs:
       - name: Build and push Docker image
         run: |
           docker build -t ghcr.io/evora-project/virus-taxonomy-mappings:${{ github.sha }} .
-          docker tag ghcr.io/evora-project/virus-taxonomy-mappings:${{github.sha}} ghcr.io/evora-project/ols-semsim:${{ github.head_ref || github.ref_name }}
+          docker tag ghcr.io/evora-project/virus-taxonomy-mappings:${{github.sha}} ghcr.io/evora-project/virus-taxonomy-mappings:${{ github.head_ref || github.ref_name }}
           docker push --all-tags ghcr.io/evora-project/virus-taxonomy-mappings
