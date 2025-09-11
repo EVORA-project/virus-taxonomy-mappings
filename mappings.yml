@@ -1,5 +1,5 @@
-registry_id: mapping-registry-id
-registry_title: Mapping Registry Template
+registry_id: virus-taxonomy-mappings
+registry_title: Virus Taxonomy Mappings
 registry_description: Mappings between ICTV and NCBITaxon for the EVORA project
 homepage: "https://github.com/EVORA-project/virus-taxonomy-mappings"
 mappings:
@@ -7,8 +7,6 @@ mappings:
     mapping_set_group: virus_taxonomy_mappings
     mapping_set_title: "Virus Taxonomy Mappings"
     curie_map:
-      HP: "http://purl.obolibrary.org/obo/HP_"
-      MP: "http://purl.obolibrary.org/obo/MP_"
       skos: "http://www.w3.org/2004/02/skos/core"
     license: "https://creativecommons.org/publicdomain/zero/1.0/"
     mapping_provider: "https://github.com/EVORA-project/virus-taxonomy-mappings"
