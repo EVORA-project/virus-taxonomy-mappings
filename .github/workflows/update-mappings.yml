@@ -1,0 +1,51 @@
+name: Update Mappings
+
+on:
+  # Run weekly on Mondays at 00:00 UTC
+  schedule:
+    - cron: '0 0 * * 1'
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  update-mappings:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Generate mappings
+        run: |
+          uv run python src/map.py \
+            --output mappings/ictv_ncbitaxon_exact.sssom.tsv
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code mappings/ictv_ncbitaxon_exact.sssom.tsv || \
+            echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push changes
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add mappings/ictv_ncbitaxon_exact.sssom.tsv
+          git commit -m "chore: update virus taxonomy mappings"
+          git push
