@@ -1,15 +1,33 @@
 import requests
 import datetime
 import argparse
+import os
 from sssom import Mapping
 from sssom.writers import write_table
 from sssom.util import MappingSetDataFrame
+from sssom.parsers import parse_sssom_table
 
 API_BASE = "https://www.ebi.ac.uk/ols4/api"
 PAGE_SIZE = 1000
 
 def iri_to_curie(iri: str) -> str:
     return iri.replace("http://purl.obolibrary.org/obo/NCBITaxon_", "ncbitaxon:").replace("http://ictv.global/id/", "ictv:")
+
+def load_existing_mappings(filepath):
+    """Load existing mappings from SSSOM file if it exists."""
+    if not os.path.exists(filepath):
+        print(f"No existing mappings file found at {filepath}")
+        return []
+    
+    try:
+        print(f"Loading existing mappings from {filepath}...")
+        msdf = parse_sssom_table(filepath)
+        existing = msdf.to_mappings()
+        print(f"Loaded {len(existing)} existing mappings")
+        return existing
+    except Exception as e:
+        print(f"Warning: Could not load existing mappings: {e}")
+        return []
 
 def get_all_terms(ontology: str):
     terms = []
@@ -69,18 +87,39 @@ def main():
     )
     args = parser.parse_args()
 
+    # Load existing mappings to avoid re-querying
+    existing_mappings = load_existing_mappings(args.output)
+    
+    # Build a set of subject_ids that already have mappings
+    existing_subjects = set()
+    for mapping in existing_mappings:
+        existing_subjects.add(mapping.subject_id)
+    
+    print(f"Found {len(existing_subjects)} ICTV terms already mapped")
+
     ictv_terms = get_all_terms("ictv")
     total = len(ictv_terms)
-    mappings = []
+    mappings = list(existing_mappings)  # Start with existing mappings
     today = datetime.date.today().isoformat()
+    
+    new_mappings_count = 0
+    skipped_count = 0
 
     for idx, term in enumerate(ictv_terms, start=1):
+        ictv_iri = term.get("iri")
+        subject_id = iri_to_curie(ictv_iri)
+        
+        # Skip if we already have a mapping for this subject
+        if subject_id in existing_subjects:
+            skipped_count += 1
+            if skipped_count % 100 == 0:
+                print(f"  [{idx}/{total}] Skipped {skipped_count} already-mapped terms...")
+            continue
+        
         labels = ensure_list(term.get("label", [])) + ensure_list(term.get("synonyms", []))
 
         for label in labels:
             print(f"  [{idx}/{total}] Processing: '{label}'")
-            ictv_iri = term.get("iri")
-            subject_id = iri_to_curie(ictv_iri)
             match = find_exact_ncbitaxon(label)
             if match:
                 ncbi_iri = match.get("iri")
@@ -101,11 +140,14 @@ def main():
                         mapping_date=today
                     )
                 )
+                new_mappings_count += 1
+                existing_subjects.add(subject_id)  # Mark as mapped
                 print(f"    ▶ Match found: {subject_id} -> {object_id}")
+                break  # Found a mapping for this subject, no need to check other labels
             else:
                 print(f"    ✗ No match for '{label}'")
 
-    print(f"Exact match search complete: {len(mappings)} mappings found.")
+    print(f"Mapping complete: {len(mappings)} total mappings ({new_mappings_count} new, {skipped_count} skipped)")
 
     prefix_map = {
         "ictv": "http://ictv.global/id/",

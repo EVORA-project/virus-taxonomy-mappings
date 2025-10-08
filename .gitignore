@@ -3,4 +3,6 @@ venv
 *.ttl
 *.tsv
 report.txt
+__pycache__/
+*.pyc
 
