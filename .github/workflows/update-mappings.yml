@@ -47,5 +47,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add mappings/ictv_ncbitaxon_exact.sssom.tsv
-          git commit -m "chore: update virus taxonomy mappings"
+          git commit -m "update virus taxonomy mappings"
           git push
