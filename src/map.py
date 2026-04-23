@@ -20,6 +20,10 @@ DEFAULT_MAX_RETRIES = 3
 DEFAULT_BACKOFF_FACTOR = 1.0
 
 
+class TransientOlsError(RuntimeError):
+    """Raised when OLS fails after retries, so we do not write partial results."""
+
+
 def build_session(max_retries: int, backoff_factor: float) -> requests.Session:
     retry = Retry(
         total=max_retries,
@@ -115,9 +119,8 @@ def find_exact_ncbitaxon(
     try:
         data = request_json(session, url, params=params, timeout=timeout)
     except requests.RequestException as e:
-        print(f"    Warning: OLS search failed for '{label}' after retries: {e}")
         time.sleep(pause_after_failure)
-        return None
+        raise TransientOlsError(f"OLS search failed for '{label}' after retries: {e}") from e
 
     docs = data.get("response", {}).get("docs", [])
     if len(docs) > 0:
@@ -130,9 +133,8 @@ def find_exact_ncbitaxon(
         try:
             return request_json(session, term_url, timeout=timeout)
         except requests.RequestException as e:
-            print(f"    Warning: OLS term lookup failed for '{term_iri}' after retries: {e}")
             time.sleep(pause_after_failure)
-            return None
+            raise TransientOlsError(f"OLS term lookup failed for '{term_iri}' after retries: {e}") from e
     return None
 
 
