@@ -15,9 +15,9 @@ from urllib3.util.retry import Retry
 
 API_BASE = "https://www.ebi.ac.uk/ols4/api"
 PAGE_SIZE = 1000
-DEFAULT_TIMEOUT_SECONDS = 30
-DEFAULT_MAX_RETRIES = 5
-DEFAULT_BACKOFF_FACTOR = 2.0
+DEFAULT_TIMEOUT_SECONDS = 15
+DEFAULT_MAX_RETRIES = 3
+DEFAULT_BACKOFF_FACTOR = 1.0
 
 
 def build_session(max_retries: int, backoff_factor: float) -> requests.Session:
@@ -29,7 +29,7 @@ def build_session(max_retries: int, backoff_factor: float) -> requests.Session:
         backoff_factor=backoff_factor,
         status_forcelist=(429, 500, 502, 503, 504),
         allowed_methods=frozenset(["GET"]),
-        respect_retry_after_header=True,
+        respect_retry_after_header=False,
     )
     adapter = HTTPAdapter(max_retries=retry)
     session = requests.Session()
