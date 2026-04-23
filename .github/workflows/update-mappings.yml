@@ -7,9 +7,56 @@ on:
   # Allow manual trigger
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  update-mappings:
+  generate-shards:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    env:
+      SHARD_COUNT: 8
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Generate shard
+        run: |
+          mkdir -p mappings/shards
+          uv run python src/map.py \
+            --output mappings/shards/ictv_ncbitaxon_exact.shard-${{ matrix.shard }}.sssom.tsv \
+            --shard-index ${{ matrix.shard }} \
+            --shard-count ${SHARD_COUNT} \
+            --request-timeout 30 \
+            --max-retries 5 \
+            --backoff-factor 2
+
+      - name: Upload shard artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mapping-shard-${{ matrix.shard }}
+          path: mappings/shards/ictv_ncbitaxon_exact.shard-${{ matrix.shard }}.sssom.tsv
+          if-no-files-found: error
+
+  merge-mappings:
+    runs-on: ubuntu-latest
+    needs: generate-shards
     permissions:
       contents: write
 
@@ -30,9 +77,17 @@ jobs:
       - name: Install dependencies
         run: uv sync --frozen
 
-      - name: Generate mappings
+      - name: Download shard artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: mapping-shard-*
+          path: mappings/shards
+          merge-multiple: true
+
+      - name: Merge shards
         run: |
-          uv run python src/map.py \
+          uv run python src/merge_mappings.py \
+            --input-glob 'mappings/shards/*.sssom.tsv' \
             --output mappings/ictv_ncbitaxon_exact.sssom.tsv
 
       - name: Check for changes

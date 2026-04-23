@@ -1,24 +1,53 @@
-import requests
-import datetime
 import argparse
+import datetime
 import os
+import time
+from functools import lru_cache
+from typing import Iterable
+
+import requests
+from requests.adapters import HTTPAdapter
 from sssom import Mapping
-from sssom.writers import write_table
-from sssom.util import MappingSetDataFrame
 from sssom.parsers import parse_sssom_table
+from sssom.util import MappingSetDataFrame
+from sssom.writers import write_table
+from urllib3.util.retry import Retry
 
 API_BASE = "https://www.ebi.ac.uk/ols4/api"
 PAGE_SIZE = 1000
+DEFAULT_TIMEOUT_SECONDS = 30
+DEFAULT_MAX_RETRIES = 5
+DEFAULT_BACKOFF_FACTOR = 2.0
+
+
+def build_session(max_retries: int, backoff_factor: float) -> requests.Session:
+    retry = Retry(
+        total=max_retries,
+        connect=max_retries,
+        read=max_retries,
+        status=max_retries,
+        backoff_factor=backoff_factor,
+        status_forcelist=(429, 500, 502, 503, 504),
+        allowed_methods=frozenset(["GET"]),
+        respect_retry_after_header=True,
+    )
+    adapter = HTTPAdapter(max_retries=retry)
+    session = requests.Session()
+    session.mount("https://", adapter)
+    session.mount("http://", adapter)
+    return session
+
 
 def iri_to_curie(iri: str) -> str:
     return iri.replace("http://purl.obolibrary.org/obo/NCBITaxon_", "ncbitaxon:").replace("http://ictv.global/id/", "ictv:")
 
+
 def load_existing_mappings(filepath):
     """Load existing mappings from SSSOM file if it exists."""
-    if not os.path.exists(filepath):
+    if not filepath or not os.path.exists(filepath):
         print(f"No existing mappings file found at {filepath}")
         return []
-    
+
     try:
         print(f"Loading existing mappings from {filepath}...")
         msdf = parse_sssom_table(filepath)
@@ -29,16 +58,27 @@ def load_existing_mappings(filepath):
         print(f"Warning: Could not load existing mappings: {e}")
         return []
 
-def get_all_terms(ontology: str):
+
+def request_json(
+    session: requests.Session,
+    url: str,
+    *,
+    params: dict | None = None,
+    timeout: float = DEFAULT_TIMEOUT_SECONDS,
+):
+    resp = session.get(url, params=params, timeout=timeout)
+    resp.raise_for_status()
+    return resp.json()
+
+
+def get_all_terms(session: requests.Session, ontology: str, timeout: float):
     terms = []
     page = 0
     print(f"Fetching terms for ontology '{ontology}'...")
     while True:
         url = f"{API_BASE}/ontologies/{ontology}/terms"
         params = {"size": PAGE_SIZE, "page": page}
-        resp = requests.get(url, params=params)
-        resp.raise_for_status()
-        data = resp.json()
+        data = request_json(session, url, params=params, timeout=timeout)
         batch = data.get("_embedded", {}).get("terms", [])
         if not batch:
             break
@@ -52,81 +92,209 @@ def get_all_terms(ontology: str):
     print(f"Completed fetching {len(terms)} terms for '{ontology}'.")
     return terms
 
-def find_exact_ncbitaxon(label: str):
+
+@lru_cache(maxsize=50000)
+def quote_iri_for_ols(iri: str) -> str:
+    return requests.utils.quote(requests.utils.quote(iri, safe=""), safe="")
+
+
+def find_exact_ncbitaxon(
+    session: requests.Session,
+    label: str,
+    *,
+    timeout: float,
+    pause_after_failure: float,
+):
     url = f"{API_BASE}/search"
     params = {
         "q": label,
         "ontology": "ncbitaxon",
         "exact": True,
-        "rows": 1
+        "rows": 1,
     }
-    resp = requests.get(url, params=params)
-    resp.raise_for_status()
-    data = resp.json()
+    try:
+        data = request_json(session, url, params=params, timeout=timeout)
+    except requests.RequestException as e:
+        print(f"    Warning: OLS search failed for '{label}' after retries: {e}")
+        time.sleep(pause_after_failure)
+        return None
+
     docs = data.get("response", {}).get("docs", [])
     if len(docs) > 0:
         doc = docs[0]
         term_iri = doc.get("iri")
-        term_iri_enc = requests.utils.quote(requests.utils.quote(term_iri, safe=''), safe='')
+        if not term_iri:
+            return None
+        term_iri_enc = quote_iri_for_ols(term_iri)
         term_url = f"{API_BASE}/ontologies/ncbitaxon/terms/{term_iri_enc}"
-        print(term_url)
-        term_resp = requests.get(term_url)
-        term_resp.raise_for_status()
-        return term_resp.json()
+        try:
+            return request_json(session, term_url, timeout=timeout)
+        except requests.RequestException as e:
+            print(f"    Warning: OLS term lookup failed for '{term_iri}' after retries: {e}")
+            time.sleep(pause_after_failure)
+            return None
     return None
 
+
 def ensure_list(x):
+    if x is None:
+        return []
     return x if isinstance(x, list) else [x]
+
+
+def labels_for_term(term: dict) -> list[str]:
+    seen = set()
+    labels = []
+    for label in ensure_list(term.get("label", [])) + ensure_list(term.get("synonyms", [])):
+        if not label:
+            continue
+        key = label.casefold()
+        if key not in seen:
+            seen.add(key)
+            labels.append(label)
+    return labels
+
+
+def shard_terms(terms: list[dict], shard_index: int, shard_count: int) -> Iterable[tuple[int, dict]]:
+    for idx, term in enumerate(terms, start=1):
+        if (idx - 1) % shard_count == shard_index:
+            yield idx, term
+
+
+def mapping_key(mapping: Mapping) -> tuple[str, str, str]:
+    return (str(mapping.subject_id), str(mapping.predicate_id), str(mapping.object_id))
+
+
+def write_mappings(filepath: str, mappings: list[Mapping]):
+    prefix_map = {
+        "ictv": "http://ictv.global/id/",
+        "ncbitaxon": "http://purl.obolibrary.org/obo/NCBITaxon_",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+    }
+    metadata = {
+        "mapping_set_id": "ictv_to_ncbitaxon",
+        "mapping_provider": "https://github.com/EVORA-project/virus-taxonomy-mappings",
+        "license": "CC0",
+        "mapping_set_title": "ICTV to NCBITaxon exact lexical mappings",
+    }
+
+    mappings = sorted(mappings, key=mapping_key)
+    msdf = MappingSetDataFrame.from_mappings(mappings, converter=prefix_map, metadata=metadata)
+
+    with open(filepath, "w", encoding="utf-8") as f:
+        write_table(msdf, f)
+
 
 def main():
     parser = argparse.ArgumentParser(description="Generate ICTV to NCBITaxon mappings.")
     parser.add_argument(
         "--output", "-o",
         required=True,
-        help="Path to the output SSSOM TSV file"
+        help="Path to the output SSSOM TSV file",
+    )
+    parser.add_argument(
+        "--existing",
+        help="Optional existing SSSOM TSV file used to skip already mapped subjects",
+    )
+    parser.add_argument(
+        "--shard-index",
+        type=int,
+        default=0,
+        help="Zero-based shard index to process",
+    )
+    parser.add_argument(
+        "--shard-count",
+        type=int,
+        default=1,
+        help="Total number of shards",
+    )
+    parser.add_argument(
+        "--request-timeout",
+        type=float,
+        default=DEFAULT_TIMEOUT_SECONDS,
+        help="OLS request timeout in seconds",
+    )
+    parser.add_argument(
+        "--max-retries",
+        type=int,
+        default=DEFAULT_MAX_RETRIES,
+        help="Maximum retries for transient OLS failures",
+    )
+    parser.add_argument(
+        "--backoff-factor",
+        type=float,
+        default=DEFAULT_BACKOFF_FACTOR,
+        help="Exponential backoff factor between retries",
+    )
+    parser.add_argument(
+        "--pause-after-failure",
+        type=float,
+        default=1.0,
+        help="Small pause after an exhausted label lookup before continuing",
     )
     args = parser.parse_args()
 
-    # Load existing mappings to avoid re-querying
-    existing_mappings = load_existing_mappings(args.output)
-    
-    # Build a set of subject_ids that already have mappings
-    existing_subjects = set()
-    for mapping in existing_mappings:
-        existing_subjects.add(mapping.subject_id)
-    
+    if args.shard_count < 1:
+        raise ValueError("--shard-count must be at least 1")
+    if args.shard_index < 0 or args.shard_index >= args.shard_count:
+        raise ValueError("--shard-index must be between 0 and shard-count - 1")
+
+    session = build_session(args.max_retries, args.backoff_factor)
+    existing_mappings = load_existing_mappings(args.existing) if args.existing else []
+    existing_subjects = {str(mapping.subject_id) for mapping in existing_mappings}
+
     print(f"Found {len(existing_subjects)} ICTV terms already mapped")
 
-    ictv_terms = get_all_terms("ictv")
+    ictv_terms = get_all_terms(session, "ictv", args.request_timeout)
     total = len(ictv_terms)
-    mappings = list(existing_mappings)  # Start with existing mappings
+    mappings = list(existing_mappings)
     today = datetime.date.today().isoformat()
-    
+
     new_mappings_count = 0
     skipped_count = 0
+    lookup_cache = {}
 
-    for idx, term in enumerate(ictv_terms, start=1):
+    assigned_terms = list(shard_terms(ictv_terms, args.shard_index, args.shard_count))
+    print(
+        f"Shard {args.shard_index + 1}/{args.shard_count} will process "
+        f"{len(assigned_terms)} of {total} ICTV terms"
+    )
+
+    for idx, term in assigned_terms:
         ictv_iri = term.get("iri")
+        if not ictv_iri:
+            print(f"  [{idx}/{total}] Skipping term without IRI")
+            continue
+
         subject_id = iri_to_curie(ictv_iri)
-        
-        # Skip if we already have a mapping for this subject
+
         if subject_id in existing_subjects:
             skipped_count += 1
             if skipped_count % 100 == 0:
                 print(f"  [{idx}/{total}] Skipped {skipped_count} already-mapped terms...")
             continue
-        
-        labels = ensure_list(term.get("label", [])) + ensure_list(term.get("synonyms", []))
 
-        for label in labels:
+        for label in labels_for_term(term):
             print(f"  [{idx}/{total}] Processing: '{label}'")
-            match = find_exact_ncbitaxon(label)
+            if label in lookup_cache:
+                match = lookup_cache[label]
+            else:
+                match = find_exact_ncbitaxon(
+                    session,
+                    label,
+                    timeout=args.request_timeout,
+                    pause_after_failure=args.pause_after_failure,
+                )
+                lookup_cache[label] = match
             if match:
                 ncbi_iri = match.get("iri")
+                if not ncbi_iri:
+                    print(f"    Warning: OLS returned a match without an IRI for '{label}'")
+                    continue
                 object_id = iri_to_curie(ncbi_iri)
                 object_labels = ensure_list(match.get("label", [])) + ensure_list(match.get("synonyms", []))
-                if not label.lower() in [l.lower() for l in object_labels]:
-                    print(f"    ✗ OLS returned {ncbi_iri} {object_labels} as a match for '{label}' but it does not actually have that label")
+                if label.casefold() not in [l.casefold() for l in object_labels]:
+                    print(f"    No accepted match: OLS returned {ncbi_iri} {object_labels} for '{label}'")
                     continue
                 mappings.append(
                     Mapping(
@@ -137,34 +305,19 @@ def main():
                         object_label=label,
                         mapping_justification="semapv:LexicalMatching",
                         mapping_tool="https://github.com/EVORA-project/virus-taxonomy-mappings",
-                        mapping_date=today
+                        mapping_date=today,
                     )
                 )
                 new_mappings_count += 1
-                existing_subjects.add(subject_id)  # Mark as mapped
-                print(f"    ▶ Match found: {subject_id} -> {object_id}")
-                break  # Found a mapping for this subject, no need to check other labels
+                existing_subjects.add(subject_id)
+                print(f"    Match found: {subject_id} -> {object_id}")
+                break
             else:
-                print(f"    ✗ No match for '{label}'")
+                print(f"    No match for '{label}'")
 
     print(f"Mapping complete: {len(mappings)} total mappings ({new_mappings_count} new, {skipped_count} skipped)")
+    write_mappings(args.output, mappings)
 
-    prefix_map = {
-        "ictv": "http://ictv.global/id/",
-        "ncbitaxon": "http://purl.obolibrary.org/obo/NCBITaxon_",
-        "skos": "http://www.w3.org/2004/02/skos/core#"
-    }
-    metadata = {
-        "mapping_set_id": "ictv_to_ncbitaxon",
-        "mapping_provider": "https://github.com/EVORA-project/virus-taxonomy-mappings",
-        "license": "CC0",
-        "mapping_set_title": "ICTV to NCBITaxon exact lexical mappings"
-    }
-
-    msdf = MappingSetDataFrame.from_mappings(mappings, converter=prefix_map, metadata=metadata)
-
-    with open(args.output, "w", encoding="utf-8") as f:
-        write_table(msdf, f)
 
 if __name__ == "__main__":
     main()
