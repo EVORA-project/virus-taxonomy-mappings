@@ -279,6 +279,8 @@ def main():
     new_mappings_count = 0
     skipped_count = 0
     lookup_cache = {}
+    transient_failure_count = 0
+    transient_failure_subjects = set()
 
     assigned_terms = list(shard_terms(ictv_terms, args.shard_index, args.shard_count))
     print(
@@ -302,16 +304,22 @@ def main():
 
         for label in labels_for_term(term):
             print(f"  [{idx}/{total}] Processing: '{label}'")
-            if label in lookup_cache:
-                match = lookup_cache[label]
-            else:
-                match = find_exact_ncbitaxon(
-                    session,
-                    label,
-                    timeout=args.request_timeout,
-                    pause_after_failure=args.pause_after_failure,
-                )
-                lookup_cache[label] = match
+            try:
+                if label in lookup_cache:
+                    match = lookup_cache[label]
+                else:
+                    match = find_exact_ncbitaxon(
+                        session,
+                        label,
+                        timeout=args.request_timeout,
+                        pause_after_failure=args.pause_after_failure,
+                    )
+                    lookup_cache[label] = match
+            except TransientOlsError as e:
+                transient_failure_count += 1
+                transient_failure_subjects.add(subject_id)
+                print(f"    Transient OLS failure, leaving subject retryable: {e}")
+                continue
             if match:
                 ncbi_iri = match.get("iri")
                 if not ncbi_iri:
@@ -336,6 +344,7 @@ def main():
                 )
                 new_mappings_count += 1
                 existing_subjects.add(subject_id)
+                transient_failure_subjects.discard(subject_id)
                 print(f"    Match found: {subject_id} -> {object_id}")
                 break
             else:
@@ -344,7 +353,9 @@ def main():
     output_description = "new mappings" if args.new_only else "total mappings"
     print(
         f"Mapping complete: {len(mappings)} {output_description} "
-        f"({new_mappings_count} new, {skipped_count} skipped)"
+        f"({new_mappings_count} new, {skipped_count} skipped, "
+        f"{transient_failure_count} transient OLS failures across "
+        f"{len(transient_failure_subjects)} unresolved subjects)"
     )
     write_mappings(args.output, mappings)
 
