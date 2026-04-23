@@ -45,8 +45,8 @@ jobs:
             --new-only \
             --shard-index ${{ matrix.shard }} \
             --shard-count ${SHARD_COUNT} \
-            --request-timeout 15 \
-            --max-retries 3 \
+            --request-timeout 30 \
+            --max-retries 5 \
             --backoff-factor 1
 
       - name: Upload shard artifact

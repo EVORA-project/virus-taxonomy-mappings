@@ -15,8 +15,8 @@ from urllib3.util.retry import Retry
 
 API_BASE = "https://www.ebi.ac.uk/ols4/api"
 PAGE_SIZE = 1000
-DEFAULT_TIMEOUT_SECONDS = 15
-DEFAULT_MAX_RETRIES = 3
+DEFAULT_TIMEOUT_SECONDS = 30
+DEFAULT_MAX_RETRIES = 5
 DEFAULT_BACKOFF_FACTOR = 1.0
 
 
