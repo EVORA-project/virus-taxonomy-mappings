@@ -8,10 +8,11 @@ The mappings are automatically updated weekly on Mondays at 00:00 UTC via a GitH
 
 1. Fetches all terms from the ICTV ontology via the OLS API
 2. Splits matching work across parallel shards
-3. Performs exact lexical matching against NCBITaxon with retries, backoff, and request timeouts
-4. Uploads shard outputs as workflow artifacts
-5. Merges shard outputs into a final SSSOM TSV file
-6. Commits and pushes changes if the mappings have been updated
+3. Reuses the existing SSSOM file to skip ICTV subjects that are already mapped
+4. Performs exact lexical matching against NCBITaxon with retries, backoff, and request timeouts
+5. Uploads new shard mappings as workflow artifacts
+6. Merges the existing file plus shard outputs into a final SSSOM TSV file
+7. Commits and pushes changes if the mappings have been updated
 
 The workflow can also be triggered manually from the Actions tab in GitHub.
 
@@ -41,12 +42,15 @@ mkdir -p mappings/shards
 for shard in 0 1 2 3 4 5 6 7; do
   uv run python src/map.py \
     --output mappings/shards/ictv_ncbitaxon_exact.shard-${shard}.sssom.tsv \
+    --existing mappings/ictv_ncbitaxon_exact.sssom.tsv \
+    --new-only \
     --shard-index ${shard} \
     --shard-count 8
 done
 
 uv run python src/merge_mappings.py \
   --input-glob 'mappings/shards/*.sssom.tsv' \
+  --existing mappings/ictv_ncbitaxon_exact.sssom.tsv \
   --output mappings/ictv_ncbitaxon_exact.sssom.tsv
 ```
 

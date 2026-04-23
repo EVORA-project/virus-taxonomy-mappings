@@ -41,6 +41,8 @@ jobs:
           mkdir -p mappings/shards
           uv run python src/map.py \
             --output mappings/shards/ictv_ncbitaxon_exact.shard-${{ matrix.shard }}.sssom.tsv \
+            --existing mappings/ictv_ncbitaxon_exact.sssom.tsv \
+            --new-only \
             --shard-index ${{ matrix.shard }} \
             --shard-count ${SHARD_COUNT} \
             --request-timeout 30 \
@@ -88,6 +90,7 @@ jobs:
         run: |
           uv run python src/merge_mappings.py \
             --input-glob 'mappings/shards/*.sssom.tsv' \
+            --existing mappings/ictv_ncbitaxon_exact.sssom.tsv \
             --output mappings/ictv_ncbitaxon_exact.sssom.tsv
 
       - name: Check for changes

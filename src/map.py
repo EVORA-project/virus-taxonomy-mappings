@@ -178,11 +178,30 @@ def write_mappings(filepath: str, mappings: list[Mapping]):
         "mapping_set_title": "ICTV to NCBITaxon exact lexical mappings",
     }
 
-    mappings = sorted(mappings, key=mapping_key)
-    msdf = MappingSetDataFrame.from_mappings(mappings, converter=prefix_map, metadata=metadata)
-
     with open(filepath, "w", encoding="utf-8") as f:
+        if not mappings:
+            write_empty_table(f)
+            return
+
+        mappings = sorted(mappings, key=mapping_key)
+        msdf = MappingSetDataFrame.from_mappings(mappings, converter=prefix_map, metadata=metadata)
         write_table(msdf, f)
+
+
+def write_empty_table(file):
+    file.write("# curie_map:\n")
+    file.write("#   ictv: http://ictv.global/id/\n")
+    file.write("#   ncbitaxon: http://purl.obolibrary.org/obo/NCBITaxon_\n")
+    file.write("#   semapv: https://w3id.org/semapv/vocab/\n")
+    file.write("#   skos: http://www.w3.org/2004/02/skos/core#\n")
+    file.write("# license: CC0\n")
+    file.write("# mapping_provider: https://github.com/EVORA-project/virus-taxonomy-mappings\n")
+    file.write("# mapping_set_id: ictv_to_ncbitaxon\n")
+    file.write("# mapping_set_title: ICTV to NCBITaxon exact lexical mappings\n")
+    file.write(
+        "subject_id\tsubject_label\tpredicate_id\tobject_id\tobject_label\t"
+        "mapping_justification\tmapping_tool\tmapping_date\n"
+    )
 
 
 def main():
@@ -195,6 +214,11 @@ def main():
     parser.add_argument(
         "--existing",
         help="Optional existing SSSOM TSV file used to skip already mapped subjects",
+    )
+    parser.add_argument(
+        "--new-only",
+        action="store_true",
+        help="Only write mappings discovered during this run, while still using --existing to skip subjects",
     )
     parser.add_argument(
         "--shard-index",
@@ -247,7 +271,7 @@ def main():
 
     ictv_terms = get_all_terms(session, "ictv", args.request_timeout)
     total = len(ictv_terms)
-    mappings = list(existing_mappings)
+    mappings = [] if args.new_only else list(existing_mappings)
     today = datetime.date.today().isoformat()
 
     new_mappings_count = 0
@@ -315,7 +339,11 @@ def main():
             else:
                 print(f"    No match for '{label}'")
 
-    print(f"Mapping complete: {len(mappings)} total mappings ({new_mappings_count} new, {skipped_count} skipped)")
+    output_description = "new mappings" if args.new_only else "total mappings"
+    print(
+        f"Mapping complete: {len(mappings)} {output_description} "
+        f"({new_mappings_count} new, {skipped_count} skipped)"
+    )
     write_mappings(args.output, mappings)
 
 
