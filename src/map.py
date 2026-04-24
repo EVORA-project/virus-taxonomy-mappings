@@ -1,7 +1,8 @@
-import argparse
+﻿import argparse
 import datetime
 import os
 import time
+from collections import defaultdict
 from functools import lru_cache
 from typing import Iterable
 
@@ -15,13 +16,14 @@ from urllib3.util.retry import Retry
 
 API_BASE = "https://www.ebi.ac.uk/ols4/api"
 PAGE_SIZE = 1000
+SEARCH_ROWS = 20
 DEFAULT_TIMEOUT_SECONDS = 30
 DEFAULT_MAX_RETRIES = 5
 DEFAULT_BACKOFF_FACTOR = 1.0
 
 
 class TransientOlsError(RuntimeError):
-    """Raised when OLS fails after retries, so we do not write partial results."""
+    """Raised when OLS fails after retries, so the subject remains retryable."""
 
 
 def build_session(max_retries: int, backoff_factor: float) -> requests.Session:
@@ -102,19 +104,19 @@ def quote_iri_for_ols(iri: str) -> str:
     return requests.utils.quote(requests.utils.quote(iri, safe=""), safe="")
 
 
-def find_exact_ncbitaxon(
+def find_exact_ncbitaxon_matches(
     session: requests.Session,
     label: str,
     *,
     timeout: float,
     pause_after_failure: float,
-):
+) -> list[dict]:
     url = f"{API_BASE}/search"
     params = {
         "q": label,
         "ontology": "ncbitaxon",
         "exact": True,
-        "rows": 1,
+        "rows": SEARCH_ROWS,
     }
     try:
         data = request_json(session, url, params=params, timeout=timeout)
@@ -122,20 +124,21 @@ def find_exact_ncbitaxon(
         time.sleep(pause_after_failure)
         raise TransientOlsError(f"OLS search failed for '{label}' after retries: {e}") from e
 
-    docs = data.get("response", {}).get("docs", [])
-    if len(docs) > 0:
-        doc = docs[0]
+    matches = []
+    seen_iris = set()
+    for doc in data.get("response", {}).get("docs", []):
         term_iri = doc.get("iri")
-        if not term_iri:
-            return None
+        if not term_iri or term_iri in seen_iris:
+            continue
+        seen_iris.add(term_iri)
         term_iri_enc = quote_iri_for_ols(term_iri)
         term_url = f"{API_BASE}/ontologies/ncbitaxon/terms/{term_iri_enc}"
         try:
-            return request_json(session, term_url, timeout=timeout)
+            matches.append(request_json(session, term_url, timeout=timeout))
         except requests.RequestException as e:
             time.sleep(pause_after_failure)
             raise TransientOlsError(f"OLS term lookup failed for '{term_iri}' after retries: {e}") from e
-    return None
+    return matches
 
 
 def ensure_list(x):
@@ -215,12 +218,17 @@ def main():
     )
     parser.add_argument(
         "--existing",
-        help="Optional existing SSSOM TSV file used to skip already mapped subjects",
+        help="Optional existing SSSOM TSV file used as a cache of already discovered mappings",
     )
     parser.add_argument(
         "--new-only",
         action="store_true",
-        help="Only write mappings discovered during this run, while still using --existing to skip subjects",
+        help="Only write mappings discovered during this run, while still using --existing as cache",
+    )
+    parser.add_argument(
+        "--recheck-existing-labels",
+        action="store_true",
+        help="Requery labels already represented in the existing SSSOM; useful for one-time backfills",
     )
     parser.add_argument(
         "--shard-index",
@@ -268,8 +276,14 @@ def main():
     session = build_session(args.max_retries, args.backoff_factor)
     existing_mappings = load_existing_mappings(args.existing) if args.existing else []
     existing_subjects = {str(mapping.subject_id) for mapping in existing_mappings}
+    existing_triples = {mapping_key(mapping) for mapping in existing_mappings}
+    existing_subject_labels = defaultdict(set)
+    for mapping in existing_mappings:
+        if getattr(mapping, "subject_label", None):
+            existing_subject_labels[str(mapping.subject_id)].add(str(mapping.subject_label).casefold())
 
     print(f"Found {len(existing_subjects)} ICTV terms already mapped")
+    print(f"Loaded {len(existing_triples)} existing mapping triples for cache reuse")
 
     ictv_terms = get_all_terms(session, "ictv", args.request_timeout)
     total = len(ictv_terms)
@@ -295,41 +309,62 @@ def main():
             continue
 
         subject_id = iri_to_curie(ictv_iri)
+        labels = labels_for_term(term)
+        if not args.recheck_existing_labels:
+            labels = [
+                label for label in labels
+                if label.casefold() not in existing_subject_labels[subject_id]
+            ]
 
-        if subject_id in existing_subjects:
+        if not labels:
             skipped_count += 1
             if skipped_count % 100 == 0:
-                print(f"  [{idx}/{total}] Skipped {skipped_count} already-mapped terms...")
+                print(f"  [{idx}/{total}] Skipped {skipped_count} cached subjects/labels...")
             continue
 
-        for label in labels_for_term(term):
+        for label in labels:
             print(f"  [{idx}/{total}] Processing: '{label}'")
             try:
                 if label in lookup_cache:
-                    match = lookup_cache[label]
+                    matches = lookup_cache[label]
                 else:
-                    match = find_exact_ncbitaxon(
+                    matches = find_exact_ncbitaxon_matches(
                         session,
                         label,
                         timeout=args.request_timeout,
                         pause_after_failure=args.pause_after_failure,
                     )
-                    lookup_cache[label] = match
+                    lookup_cache[label] = matches
             except TransientOlsError as e:
                 transient_failure_count += 1
                 transient_failure_subjects.add(subject_id)
                 print(f"    Transient OLS failure, leaving subject retryable: {e}")
                 continue
-            if match:
+
+            if not matches:
+                print(f"    No match for '{label}'")
+                continue
+
+            found_new_mapping_for_label = False
+            found_existing_mapping_for_label = False
+            for match in matches:
                 ncbi_iri = match.get("iri")
                 if not ncbi_iri:
                     print(f"    Warning: OLS returned a match without an IRI for '{label}'")
                     continue
+
                 object_id = iri_to_curie(ncbi_iri)
                 object_labels = ensure_list(match.get("label", [])) + ensure_list(match.get("synonyms", []))
-                if label.casefold() not in [l.casefold() for l in object_labels]:
+                object_labels_folded = [str(object_label).casefold() for object_label in object_labels if object_label]
+                if label.casefold() not in object_labels_folded:
                     print(f"    No accepted match: OLS returned {ncbi_iri} {object_labels} for '{label}'")
                     continue
+
+                key = (subject_id, "skos:exactMatch", object_id)
+                if key in existing_triples:
+                    found_existing_mapping_for_label = True
+                    continue
+
                 mappings.append(
                     Mapping(
                         subject_id=subject_id,
@@ -342,13 +377,17 @@ def main():
                         mapping_date=today,
                     )
                 )
-                new_mappings_count += 1
+                existing_triples.add(key)
                 existing_subjects.add(subject_id)
-                transient_failure_subjects.discard(subject_id)
+                existing_subject_labels[subject_id].add(label.casefold())
+                new_mappings_count += 1
+                found_new_mapping_for_label = True
                 print(f"    Match found: {subject_id} -> {object_id}")
-                break
-            else:
-                print(f"    No match for '{label}'")
+
+            if not found_new_mapping_for_label and found_existing_mapping_for_label:
+                print(f"    Cached mapping already present for '{label}'")
+            elif not found_new_mapping_for_label:
+                print(f"    No new accepted matches for '{label}'")
 
     output_description = "new mappings" if args.new_only else "total mappings"
     print(
