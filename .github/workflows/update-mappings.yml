@@ -1,4 +1,4 @@
-﻿name: Update Mappings
+name: Update Mappings
 
 on:
   # Run weekly on Mondays at 00:00 UTC
@@ -29,10 +29,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v7
         with:
           enable-cache: true
 
@@ -61,7 +61,7 @@ jobs:
             --backoff-factor 1
 
       - name: Upload shard artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: mapping-shard-${{ matrix.shard }}
           path: mappings/shards/ictv_ncbitaxon_exact.shard-${{ matrix.shard }}.sssom.tsv
@@ -75,12 +75,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v7
         with:
           enable-cache: true
 
