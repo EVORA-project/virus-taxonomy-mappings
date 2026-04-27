@@ -1,7 +1,8 @@
-﻿import argparse
+import argparse
 import datetime
 import os
 import time
+import unicodedata
 from collections import defaultdict
 from functools import lru_cache
 from typing import Iterable
@@ -147,13 +148,19 @@ def ensure_list(x):
     return x if isinstance(x, list) else [x]
 
 
+def normalize_lexical(text: str) -> str:
+    decomposed = unicodedata.normalize("NFKD", text)
+    without_marks = "".join(char for char in decomposed if not unicodedata.combining(char))
+    return without_marks.casefold()
+
+
 def labels_for_term(term: dict) -> list[str]:
     seen = set()
     labels = []
     for label in ensure_list(term.get("label", [])) + ensure_list(term.get("synonyms", [])):
         if not label:
             continue
-        key = label.casefold()
+        key = normalize_lexical(label)
         if key not in seen:
             seen.add(key)
             labels.append(label)
@@ -280,7 +287,7 @@ def main():
     existing_subject_labels = defaultdict(set)
     for mapping in existing_mappings:
         if getattr(mapping, "subject_label", None):
-            existing_subject_labels[str(mapping.subject_id)].add(str(mapping.subject_label).casefold())
+            existing_subject_labels[str(mapping.subject_id)].add(normalize_lexical(str(mapping.subject_label)))
 
     print(f"Found {len(existing_subjects)} ICTV terms already mapped")
     print(f"Loaded {len(existing_triples)} existing mapping triples for cache reuse")
@@ -313,7 +320,7 @@ def main():
         if not args.recheck_existing_labels:
             labels = [
                 label for label in labels
-                if label.casefold() not in existing_subject_labels[subject_id]
+                if normalize_lexical(label) not in existing_subject_labels[subject_id]
             ]
 
         if not labels:
@@ -355,8 +362,8 @@ def main():
 
                 object_id = iri_to_curie(ncbi_iri)
                 object_labels = ensure_list(match.get("label", [])) + ensure_list(match.get("synonyms", []))
-                object_labels_folded = [str(object_label).casefold() for object_label in object_labels if object_label]
-                if label.casefold() not in object_labels_folded:
+                object_labels_folded = [normalize_lexical(str(object_label)) for object_label in object_labels if object_label]
+                if normalize_lexical(label) not in object_labels_folded:
                     print(f"    No accepted match: OLS returned {ncbi_iri} {object_labels} for '{label}'")
                     continue
 
@@ -379,7 +386,7 @@ def main():
                 )
                 existing_triples.add(key)
                 existing_subjects.add(subject_id)
-                existing_subject_labels[subject_id].add(label.casefold())
+                existing_subject_labels[subject_id].add(normalize_lexical(label))
                 new_mappings_count += 1
                 found_new_mapping_for_label = True
                 print(f"    Match found: {subject_id} -> {object_id}")
