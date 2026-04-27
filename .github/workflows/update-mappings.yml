@@ -6,6 +6,12 @@ on:
     - cron: '0 0 * * 1'
   # Allow manual trigger
   workflow_dispatch:
+    inputs:
+      recheck_existing_labels:
+        description: 'Requery labels already represented in the existing SSSOM to backfill missing multi-matches'
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -23,10 +29,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v7
         with:
           enable-cache: true
 
@@ -39,10 +45,15 @@ jobs:
       - name: Generate shard
         run: |
           mkdir -p mappings/shards
+          EXTRA_ARGS=""
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.recheck_existing_labels }}" = "true" ]; then
+            EXTRA_ARGS="--recheck-existing-labels"
+          fi
           uv run python src/map.py \
             --output mappings/shards/ictv_ncbitaxon_exact.shard-${{ matrix.shard }}.sssom.tsv \
             --existing mappings/ictv_ncbitaxon_exact.sssom.tsv \
             --new-only \
+            $EXTRA_ARGS \
             --shard-index ${{ matrix.shard }} \
             --shard-count ${SHARD_COUNT} \
             --request-timeout 30 \
@@ -50,7 +61,7 @@ jobs:
             --backoff-factor 1
 
       - name: Upload shard artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: mapping-shard-${{ matrix.shard }}
           path: mappings/shards/ictv_ncbitaxon_exact.shard-${{ matrix.shard }}.sssom.tsv
@@ -64,12 +75,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v7
         with:
           enable-cache: true
 
