@@ -167,6 +167,15 @@ def labels_for_term(term: dict) -> list[str]:
     return labels
 
 
+def preferred_label(term: dict, fallback: str) -> str:
+    labels = ensure_list(term.get("label", []))
+    return str(labels[0]) if labels and labels[0] else fallback
+
+
+def is_obsolete_term(term: dict) -> bool:
+    return bool(term.get("is_obsolete") or term.get("obsolete"))
+
+
 def shard_terms(terms: list[dict], shard_index: int, shard_count: int) -> Iterable[tuple[int, dict]]:
     for idx, term in enumerate(terms, start=1):
         if (idx - 1) % shard_count == shard_index:
@@ -175,6 +184,10 @@ def shard_terms(terms: list[dict], shard_index: int, shard_count: int) -> Iterab
 
 def mapping_key(mapping: Mapping) -> tuple[str, str, str]:
     return (str(mapping.subject_id), str(mapping.predicate_id), str(mapping.object_id))
+
+
+def object_label_needs_refresh(mapping: Mapping, object_label: str) -> bool:
+    return str(getattr(mapping, "object_label", "")) != object_label
 
 
 def write_mappings(filepath: str, mappings: list[Mapping]):
@@ -284,6 +297,7 @@ def main():
     existing_mappings = load_existing_mappings(args.existing) if args.existing else []
     existing_subjects = {str(mapping.subject_id) for mapping in existing_mappings}
     existing_triples = {mapping_key(mapping) for mapping in existing_mappings}
+    existing_mappings_by_key = {mapping_key(mapping): mapping for mapping in existing_mappings}
     existing_subject_labels = defaultdict(set)
     for mapping in existing_mappings:
         if getattr(mapping, "subject_label", None):
@@ -298,6 +312,7 @@ def main():
     today = datetime.date.today().isoformat()
 
     new_mappings_count = 0
+    refreshed_mappings_count = 0
     skipped_count = 0
     lookup_cache = {}
     transient_failure_count = 0
@@ -361,14 +376,38 @@ def main():
                     continue
 
                 object_id = iri_to_curie(ncbi_iri)
+                object_label = preferred_label(match, label)
+                if is_obsolete_term(match):
+                    print(f"    No accepted match: OLS returned obsolete term {ncbi_iri} '{object_label}' for '{label}'")
+                    continue
+
                 object_labels = ensure_list(match.get("label", [])) + ensure_list(match.get("synonyms", []))
-                object_labels_folded = [normalize_lexical(str(object_label)) for object_label in object_labels if object_label]
+                object_labels_folded = [normalize_lexical(str(candidate_label)) for candidate_label in object_labels if candidate_label]
                 if normalize_lexical(label) not in object_labels_folded:
                     print(f"    No accepted match: OLS returned {ncbi_iri} {object_labels} for '{label}'")
                     continue
 
                 key = (subject_id, "skos:exactMatch", object_id)
                 if key in existing_triples:
+                    existing_mapping = existing_mappings_by_key.get(key)
+                    if existing_mapping and object_label_needs_refresh(existing_mapping, object_label):
+                        mappings.append(
+                            Mapping(
+                                subject_id=subject_id,
+                                subject_label=label,
+                                predicate_id="skos:exactMatch",
+                                object_id=object_id,
+                                object_label=object_label,
+                                mapping_justification="semapv:LexicalMatching",
+                                mapping_tool="https://github.com/EVORA-project/virus-taxonomy-mappings",
+                                mapping_date=today,
+                            )
+                        )
+                        refreshed_mappings_count += 1
+                        found_new_mapping_for_label = True
+                        print(f"    Cached mapping labels refreshed: {subject_id} -> {object_id} '{object_label}'")
+                        continue
+
                     found_existing_mapping_for_label = True
                     continue
 
@@ -378,7 +417,7 @@ def main():
                         subject_label=label,
                         predicate_id="skos:exactMatch",
                         object_id=object_id,
-                        object_label=label,
+                        object_label=object_label,
                         mapping_justification="semapv:LexicalMatching",
                         mapping_tool="https://github.com/EVORA-project/virus-taxonomy-mappings",
                         mapping_date=today,
@@ -399,7 +438,7 @@ def main():
     output_description = "new mappings" if args.new_only else "total mappings"
     print(
         f"Mapping complete: {len(mappings)} {output_description} "
-        f"({new_mappings_count} new, {skipped_count} skipped, "
+        f"({new_mappings_count} new, {refreshed_mappings_count} refreshed, {skipped_count} skipped, "
         f"{transient_failure_count} transient OLS failures across "
         f"{len(transient_failure_subjects)} unresolved subjects)"
     )

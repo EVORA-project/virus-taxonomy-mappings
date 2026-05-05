@@ -11,9 +11,10 @@ The mappings are automatically updated weekly on Mondays at 00:00 UTC via a GitH
 3. Reuses the existing SSSOM file as a cache of discovered mapping triples and already-checked label matches.
 4. Performs exact lexical matching against NCBITaxon with retries, backoff, and request timeouts.
 5. Allows a manual backfill mode that rechecks existing labels to discover additional valid exact matches for the same ICTV subject.
-6. Uploads new shard mappings as workflow artifacts.
-7. Merges the existing file plus shard outputs into a final SSSOM TSV file.
-8. Commits and pushes changes if the mappings have been updated.
+6. Refreshes stale NCBITaxon preferred labels when a cached mapping triple now points to a renamed current term.
+7. Uploads new shard mappings as workflow artifacts.
+8. Merges the existing file plus shard outputs into a final SSSOM TSV file.
+9. Commits and pushes changes if the mappings have been updated.
 
 The workflow can also be triggered manually from the Actions tab in GitHub.
 

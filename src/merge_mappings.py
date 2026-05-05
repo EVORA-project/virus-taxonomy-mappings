@@ -58,7 +58,7 @@ def main():
 
     for path in paths:
         for mapping in load_mappings(path):
-            deduped.setdefault(mapping_key(mapping), mapping)
+            deduped[mapping_key(mapping)] = mapping
 
     mappings = sorted(deduped.values(), key=mapping_key)
     print(f"Writing {len(mappings)} merged mappings from {len(paths)} shards to {args.output}")
