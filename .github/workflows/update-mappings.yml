@@ -113,8 +113,11 @@ jobs:
       - name: Check for changes
         id: git-check
         run: |
-          git diff --exit-code mappings/ictv_ncbitaxon_exact.sssom.tsv || \
+          if git diff --exit-code mappings/ictv_ncbitaxon_exact.sssom.tsv; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
             echo "changed=true" >> $GITHUB_OUTPUT
+          fi
 
       - name: Commit and push changes
         if: steps.git-check.outputs.changed == 'true'
@@ -126,3 +129,65 @@ jobs:
           git status --short
           git pull --rebase --autostash origin ${{ github.ref_name }}
           git push
+
+          
+    outputs:
+      changed: ${{ steps.git-check.outputs.changed }}
+
+  create-release:
+    runs-on: ubuntu-latest
+    needs: merge-mappings
+    if: needs.merge-mappings.outputs.changed == 'true'
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.ref_name }}
+          
+      - name: Fetch all releases to determine version
+        id: version
+        run: |
+          # Try to get the latest release
+          LATEST_RELEASE=$(gh release list --limit 1 --json tagName -q '.[0].tagName' 2>/dev/null || echo "")
+          
+          if [ -z "$LATEST_RELEASE" ]; then
+            # No releases exist, create the first one
+            NEXT_VERSION="release-1"
+          else
+            # Extract the number from the latest release tag (e.g., "release-5" -> 5)
+            LATEST_NUM=$(echo "$LATEST_RELEASE" | sed 's/release-//')
+            NEXT_NUM=$((LATEST_NUM + 1))
+            NEXT_VERSION="release-${NEXT_NUM}"
+          fi
+          
+          echo "version=${NEXT_VERSION}" >> $GITHUB_OUTPUT
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get latest commit info
+        id: commit-info
+        run: |
+          COMMIT_SHA=$(git rev-parse --short HEAD)
+          COMMIT_MSG=$(git log -1 --format=%B)
+          echo "sha=${COMMIT_SHA}" >> $GITHUB_OUTPUT
+          echo "message=${COMMIT_MSG}" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: mappings/ictv_ncbitaxon_exact.sssom.tsv
+          tag_name: ${{ steps.version.outputs.version }}
+          name: Virus Taxonomy Mappings Update
+          body: |
+            Automated release of updated virus taxonomy mappings
+            
+            Commit: ${{ steps.commit-info.outputs.sha }}
+            Message: ${{ steps.commit-info.outputs.message }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
