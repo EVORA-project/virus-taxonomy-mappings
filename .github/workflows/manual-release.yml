@@ -1,0 +1,66 @@
+name: Manual Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Release tag (e.g., release-10)'
+        required: true
+        type: string
+      use_latest_commit:
+        description: 'Use latest commit or specify one'
+        required: false
+        default: true
+        type: boolean
+      commit_sha:
+        description: 'Commit SHA (leave empty to use HEAD)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout specific commit (if provided)
+        if: inputs.commit_sha != ''
+        run: git checkout ${{ inputs.commit_sha }}
+
+      - name: Get commit info
+        id: commit-info
+        run: |
+          COMMIT_SHA=$(git rev-parse --short HEAD)
+          COMMIT_MSG=$(git log -1 --format=%B)
+          echo "sha=${COMMIT_SHA}" >> $GITHUB_OUTPUT
+          echo "message=${COMMIT_MSG}" >> $GITHUB_OUTPUT
+
+      - name: Verify mapping file exists
+        run: |
+          if [ ! -f mappings/ictv_ncbitaxon_exact.sssom.tsv ]; then
+            echo "Error: mappings/ictv_ncbitaxon_exact.sssom.tsv not found"
+            exit 1
+          fi
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: mappings/ictv_ncbitaxon_exact.sssom.tsv
+          tag_name: ${{ inputs.tag_name }}
+          name: Virus Taxonomy Mappings Update
+          body: |
+            Automated release of updated virus taxonomy mappings
+            
+            Commit: ${{ steps.commit-info.outputs.sha }}
+            Message: ${{ steps.commit-info.outputs.message }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
