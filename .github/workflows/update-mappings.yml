@@ -150,9 +150,11 @@ jobs:
           
       - name: Fetch all releases to determine version
         id: version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Try to get the latest release
-          LATEST_RELEASE=$(gh release list --limit 1 --json tagName -q '.[0].tagName' 2>/dev/null || echo "")
+          LATEST_RELEASE=$(gh release list --limit 1 --json tagName -q '.[0].tagName' || echo "")
           
           if [ -z "$LATEST_RELEASE" ]; then
             # No releases exist, create the first one
@@ -165,8 +167,6 @@ jobs:
           fi
           
           echo "version=${NEXT_VERSION}" >> $GITHUB_OUTPUT
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Get latest commit info
         id: commit-info
