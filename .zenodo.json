@@ -1,0 +1,39 @@
+{
+  "title": "EVORA-project/virus-taxonomy-mappings",
+  "description": "Generation and publication of SSSOM mappings linking ICTV virus taxonomy terms to NCBITaxon identifiers using Ontology Lookup Service API services.",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "cc-zero",
+  "creators": [
+    {
+      "name": "McLaughlin, James",
+      "affiliation": "European Molecular Biology Laboratory - European Bioinformatics Institute",
+      "orcid": "0000-0002-8361-2795"
+    },
+    {
+      "name": "Lieutaud, Philippe",
+      "affiliation": "European Virus Archive (EVA-AISBL)",
+      "orcid": "0000-0002-5080-3456"
+    }
+  ],
+  "keywords": [
+    "ICTV",
+    "NCBITaxon",
+    "SSSOM",
+    "virus taxonomy",
+    "ontology mappings"
+  ],
+  "grants": [
+    {
+      "id": "10.13039/501100000780::101131959"
+    }
+  ],
+  "communities": [
+    {
+      "identifier": "evora"
+    },
+    {
+      "identifier": "eu"
+    }
+  ]
+}
