@@ -40,6 +40,7 @@ http://purl.obolibrary.org/obo/TAXRANK_0000029	subkingdom	skos:exactMatch	http:/
 http://purl.obolibrary.org/obo/TAXRANK_0000029	subkingdom	skos:exactMatch	ncbitaxon:subkingdom	subkingdom	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 http://purl.obolibrary.org/obo/TAXRANK_0001004	clade	skos:exactMatch	http://purl.obolibrary.org/obo/TAXRANK_0001004	clade	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-04-24
 http://purl.obolibrary.org/obo/TAXRANK_0001004	clade	skos:exactMatch	ncbitaxon:clade	clade	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
+http://purl.obolibrary.org/obo/TAXRANK_0001013	realm	skos:exactMatch	http://purl.obolibrary.org/obo/TAXRANK_0001013	realm	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-09-14
 ictv:MSL1/ICTV19710003	Picornaviridae	skos:exactMatch	ncbitaxon:12058	Picornaviridae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL1/ICTV19710008	Papillomavirus	skos:exactMatch	ncbitaxon:151340	Papillomavirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL1/ICTV19710009	Polyomavirus	skos:exactMatch	ncbitaxon:36362	Polyomavirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
