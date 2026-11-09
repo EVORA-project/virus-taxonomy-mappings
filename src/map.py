@@ -1,10 +1,13 @@
 import argparse
 import datetime
+import json
 import os
+import tempfile
 import time
 import unicodedata
 from collections import defaultdict
 from functools import lru_cache
+from pathlib import Path
 from typing import Iterable
 
 import requests
@@ -21,6 +24,9 @@ SEARCH_ROWS = 20
 DEFAULT_TIMEOUT_SECONDS = 30
 DEFAULT_MAX_RETRIES = 5
 DEFAULT_BACKOFF_FACTOR = 1.0
+DEFAULT_PAGE_ATTEMPTS = 4
+DEFAULT_PAGE_RETRY_DELAY = 30.0
+RETRYABLE_STATUS_CODES = (429, 500, 502, 503, 504)
 
 
 class TransientOlsError(RuntimeError):
@@ -34,7 +40,7 @@ def build_session(max_retries: int, backoff_factor: float) -> requests.Session:
         read=max_retries,
         status=max_retries,
         backoff_factor=backoff_factor,
-        status_forcelist=(429, 500, 502, 503, 504),
+        status_forcelist=RETRYABLE_STATUS_CODES,
         allowed_methods=frozenset(["GET"]),
         respect_retry_after_header=False,
     )
@@ -78,25 +84,123 @@ def request_json(
     return resp.json()
 
 
-def get_all_terms(session: requests.Session, ontology: str, timeout: float):
+def validate_terms(terms):
+    if not isinstance(terms, list) or not terms:
+        raise ValueError("The ontology term list must be nonempty")
+    iris = set()
+    for term in terms:
+        if not isinstance(term, dict) or not isinstance(term.get("iri"), str) or not term["iri"]:
+            raise ValueError("Every ontology term must have an IRI")
+        if term["iri"] in iris:
+            raise ValueError(f"Duplicate ontology term IRI: {term['iri']}")
+        iris.add(term["iri"])
+
+
+def get_terms_page(session, ontology, page, timeout, downloaded, expected_total):
+    url = f"{API_BASE}/ontologies/{ontology}/terms"
+    data = request_json(session, url, params={"size": PAGE_SIZE, "page": page}, timeout=timeout)
+    if not isinstance(data, dict):
+        raise ValueError("OLS returned a non-object terms response")
+    embedded = data.get("_embedded")
+    info = data.get("page")
+    links = data.get("_links")
+    if not isinstance(embedded, dict) or not isinstance(info, dict) or not isinstance(links, dict):
+        raise ValueError("OLS returned missing or invalid terms pagination data")
+    batch = embedded.get("terms")
+    validate_terms(batch)
+    total = info.get("totalElements")
+    if type(total) is not int or total < 1 or info.get("number") != page:
+        raise ValueError("OLS returned invalid page number or totalElements")
+    if expected_total is not None and total != expected_total:
+        raise ValueError("OLS term count changed during pagination; refusing a mixed snapshot")
+    count = downloaded + len(batch)
+    has_next = "next" in links
+    if count > total or has_next != (count < total):
+        raise ValueError(f"Incomplete OLS pagination: received {count} of {total} terms")
+    return batch, total, has_next
+
+
+def get_all_terms(
+    session: requests.Session,
+    ontology: str,
+    timeout: float,
+    *,
+    page_attempts: int = DEFAULT_PAGE_ATTEMPTS,
+    page_retry_delay: float = DEFAULT_PAGE_RETRY_DELAY,
+):
+    if page_attempts < 1 or page_retry_delay < 0:
+        raise ValueError("Page attempts must be positive and retry delay nonnegative")
     terms = []
     page = 0
-    print(f"Fetching terms for ontology '{ontology}'...")
+    expected_total = None
+    print(f"Fetching terms for ontology '{ontology}'...", flush=True)
     while True:
-        url = f"{API_BASE}/ontologies/{ontology}/terms"
-        params = {"size": PAGE_SIZE, "page": page}
-        data = request_json(session, url, params=params, timeout=timeout)
-        batch = data.get("_embedded", {}).get("terms", [])
-        if not batch:
-            break
+        # Keep earlier pages in memory while the failing page gets a longer cooldown.
+        for attempt in range(1, page_attempts + 1):
+            print(f"  Fetching page {page}, attempt {attempt}/{page_attempts}...", flush=True)
+            try:
+                batch, expected_total, has_next = get_terms_page(
+                    session, ontology, page, timeout, len(terms), expected_total,
+                )
+                break
+            except (requests.RequestException, ValueError) as error:
+                if isinstance(error, requests.HTTPError) and (
+                    error.response is None or error.response.status_code not in RETRYABLE_STATUS_CODES
+                ):
+                    raise
+                if attempt == page_attempts:
+                    raise RuntimeError(
+                        f"OLS {ontology} page {page} failed after {page_attempts} recovery attempts; "
+                        f"download incomplete ({len(terms)} terms). No snapshot was published."
+                    ) from error
+                delay = min(page_retry_delay * 2 ** (attempt - 1), 120.0)
+                print(
+                    f"  OLS {ontology} page {page} failed: {error}. "
+                    f"Retrying the same page in {delay:g}s ({len(terms)} terms retained).",
+                    flush=True,
+                )
+                time.sleep(delay)
         terms.extend(batch)
-        print(f"  Retrieved batch {page + 1}, total so far: {len(terms)}")
-        links = data.get("_links", {})
-        if "next" in links:
+        print(f"  Retrieved batch {page + 1}, total so far: {len(terms)}/{expected_total}", flush=True)
+        if has_next:
             page += 1
         else:
             break
-    print(f"Completed fetching {len(terms)} terms for '{ontology}'.")
+    validate_terms(terms)
+    print(f"Completed fetching {len(terms)} terms for '{ontology}'.", flush=True)
+    return terms
+
+
+def write_terms_file(filepath: str, ontology: str, terms: list[dict]):
+    validate_terms(terms)
+    path = Path(filepath)
+    # Matching only uses these fields; omit bulky per-term OLS links and annotations.
+    snapshot_terms = [
+        {key: term[key] for key in ("iri", "label", "synonyms") if key in term}
+        for term in terms
+    ]
+    snapshot = {"ontology": ontology, "total_terms": len(terms), "terms": snapshot_terms}
+    temporary_path = None
+    try:
+        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=path.parent, delete=False) as file:
+            temporary_path = Path(file.name)
+            json.dump(snapshot, file, ensure_ascii=False)
+        temporary_path.replace(path)
+    finally:
+        if temporary_path is not None:
+            temporary_path.unlink(missing_ok=True)
+
+
+def load_terms_file(filepath: str, ontology: str = "ictv") -> list[dict]:
+    with open(filepath, encoding="utf-8") as file:
+        snapshot = json.load(file)
+    if not isinstance(snapshot, dict) or snapshot.get("ontology") != ontology:
+        raise ValueError(f"Expected a '{ontology}' term snapshot in {filepath}")
+    terms = snapshot.get("terms")
+    validate_terms(terms)
+    if type(snapshot.get("total_terms")) is not int or snapshot["total_terms"] != len(terms):
+        raise ValueError(f"Incomplete term snapshot in {filepath}")
+    print(f"Loaded {len(terms)} {ontology} terms from {filepath}")
     return terms
 
 
@@ -241,6 +345,10 @@ def main():
         help="Optional existing SSSOM TSV file used as a cache of already discovered mappings",
     )
     parser.add_argument(
+        "--terms-file",
+        help="Complete ICTV JSON snapshot from fetch_terms.py; avoids downloading terms in each shard",
+    )
+    parser.add_argument(
         "--new-only",
         action="store_true",
         help="Only write mappings discovered during this run, while still using --existing as cache",
@@ -306,7 +414,11 @@ def main():
     print(f"Found {len(existing_subjects)} ICTV terms already mapped")
     print(f"Loaded {len(existing_triples)} existing mapping triples for cache reuse")
 
-    ictv_terms = get_all_terms(session, "ictv", args.request_timeout)
+    ictv_terms = (
+        load_terms_file(args.terms_file)
+        if args.terms_file
+        else get_all_terms(session, "ictv", args.request_timeout)
+    )
     total = len(ictv_terms)
     mappings = [] if args.new_only else list(existing_mappings)
     today = datetime.date.today().isoformat()
