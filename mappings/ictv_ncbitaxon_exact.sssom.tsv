@@ -7359,6 +7359,7 @@ ictv:MSL14/ICTV19950369	Fowl adenovirus 7	skos:exactMatch	ncbitaxon:172863	Fowl 
 ictv:MSL14/ICTV19950370	Fowl adenovirus 8	skos:exactMatch	ncbitaxon:66295	Fowl adenovirus 8	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL14/ICTV19950371	Fowl adenovirus 9	skos:exactMatch	ncbitaxon:172864	Fowl adenovirus 9	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL14/ICTV19950451	Porcine adenovirus 5	skos:exactMatch	ncbitaxon:45370	Porcine adenovirus 5	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
+ictv:MSL14/ICTV19950452	Porcine adenovirus 6	skos:exactMatch	ncbitaxon:3899820	Porcine adenovirus 6	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL14/ICTV19950480	Tree shrew adenovirus 1	skos:exactMatch	ncbitaxon:47680	Tree shrew adenovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL14/ICTV19950483	Guanarito virus	skos:exactMatch	ncbitaxon:3052307	Guanarito virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL14/ICTV19950499	Duck astrovirus 1	skos:exactMatch	ncbitaxon:707882	Duck astrovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -7476,6 +7477,7 @@ ictv:MSL14/ICTV19951314	Bacillus phage G	skos:exactMatch	ncbitaxon:2884420	Bacil
 ictv:MSL14/ICTV19951316	Bacillus phage PBS1	skos:exactMatch	ncbitaxon:2884423	Bacillus phage PBS1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL14/ICTV19951317	Bacillus phage SP10	skos:exactMatch	ncbitaxon:941058	Bacillus phage SP10	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL14/ICTV19951318	Bacillus phage SP15	skos:exactMatch	ncbitaxon:1792032	Bacillus phage SP15	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
+ictv:MSL14/ICTV19951320	Bacillus phage SP50	skos:exactMatch	ncbitaxon:3758758	Bacillus phage SP50	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL14/ICTV19951321	Bacillus phage SP8	skos:exactMatch	ncbitaxon:2770327	Bacillus phage SP8	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL14/ICTV19951337	Enterobacteria phage Mu	skos:exactMatch	ncbitaxon:2681603	Enterobacteria phage Mu	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL14/ICTV19951338	Enterobacteria phage P1	skos:exactMatch	ncbitaxon:2886926	Enterobacteria phage P1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -9318,6 +9320,7 @@ ictv:MSL15/ICTV19950369	Fowl adenovirus 7	skos:exactMatch	ncbitaxon:172863	Fowl 
 ictv:MSL15/ICTV19950370	Fowl adenovirus 8	skos:exactMatch	ncbitaxon:66295	Fowl adenovirus 8	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL15/ICTV19950371	Fowl adenovirus 9	skos:exactMatch	ncbitaxon:172864	Fowl adenovirus 9	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL15/ICTV19950451	Porcine adenovirus 5	skos:exactMatch	ncbitaxon:45370	Porcine adenovirus 5	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
+ictv:MSL15/ICTV19950452	Porcine adenovirus 6	skos:exactMatch	ncbitaxon:3899820	Porcine adenovirus 6	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL15/ICTV19950480	Tree shrew adenovirus 1	skos:exactMatch	ncbitaxon:47680	Tree shrew adenovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL15/ICTV19950483	Guanarito virus	skos:exactMatch	ncbitaxon:3052307	Guanarito virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL15/ICTV19950499	Duck astrovirus 1	skos:exactMatch	ncbitaxon:707882	Duck astrovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -9435,6 +9438,7 @@ ictv:MSL15/ICTV19951314	Bacillus phage G	skos:exactMatch	ncbitaxon:2884420	Bacil
 ictv:MSL15/ICTV19951316	Bacillus phage PBS1	skos:exactMatch	ncbitaxon:2884423	Bacillus phage PBS1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL15/ICTV19951317	Bacillus phage SP10	skos:exactMatch	ncbitaxon:941058	Bacillus phage SP10	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL15/ICTV19951318	Bacillus phage SP15	skos:exactMatch	ncbitaxon:1792032	Bacillus phage SP15	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
+ictv:MSL15/ICTV19951320	Bacillus phage SP50	skos:exactMatch	ncbitaxon:3758758	Bacillus phage SP50	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL15/ICTV19951321	Bacillus phage SP8	skos:exactMatch	ncbitaxon:2770327	Bacillus phage SP8	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL15/ICTV19951337	Enterobacteria phage Mu	skos:exactMatch	ncbitaxon:2681603	Enterobacteria phage Mu	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL15/ICTV19951338	Enterobacteria phage P1	skos:exactMatch	ncbitaxon:2886926	Enterobacteria phage P1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -11306,6 +11310,7 @@ ictv:MSL16/ICTV19950369	Fowl adenovirus 7	skos:exactMatch	ncbitaxon:172863	Fowl 
 ictv:MSL16/ICTV19950370	Fowl adenovirus 8	skos:exactMatch	ncbitaxon:66295	Fowl adenovirus 8	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL16/ICTV19950371	Fowl adenovirus 9	skos:exactMatch	ncbitaxon:172864	Fowl adenovirus 9	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL16/ICTV19950451	Porcine adenovirus 5	skos:exactMatch	ncbitaxon:45370	Porcine adenovirus 5	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
+ictv:MSL16/ICTV19950452	Porcine adenovirus 6	skos:exactMatch	ncbitaxon:3899820	Porcine adenovirus 6	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL16/ICTV19950480	Tree shrew adenovirus 1	skos:exactMatch	ncbitaxon:47680	Tree shrew adenovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL16/ICTV19950483	Guanarito virus	skos:exactMatch	ncbitaxon:3052307	Guanarito virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL16/ICTV19950499	Duck astrovirus 1	skos:exactMatch	ncbitaxon:707882	Duck astrovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -11423,6 +11428,7 @@ ictv:MSL16/ICTV19951314	Bacillus phage G	skos:exactMatch	ncbitaxon:2884420	Bacil
 ictv:MSL16/ICTV19951316	Bacillus phage PBS1	skos:exactMatch	ncbitaxon:2884423	Bacillus phage PBS1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL16/ICTV19951317	Bacillus phage SP10	skos:exactMatch	ncbitaxon:941058	Bacillus phage SP10	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL16/ICTV19951318	Bacillus phage SP15	skos:exactMatch	ncbitaxon:1792032	Bacillus phage SP15	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
+ictv:MSL16/ICTV19951320	Bacillus phage SP50	skos:exactMatch	ncbitaxon:3758758	Bacillus phage SP50	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL16/ICTV19951321	Bacillus phage SP8	skos:exactMatch	ncbitaxon:2770327	Bacillus phage SP8	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL16/ICTV19951337	Enterobacteria phage Mu	skos:exactMatch	ncbitaxon:2681603	Enterobacteria phage Mu	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL16/ICTV19951338	Enterobacteria phage P1	skos:exactMatch	ncbitaxon:2886926	Enterobacteria phage P1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -13322,6 +13328,7 @@ ictv:MSL17/ICTV19950369	Fowl adenovirus 7	skos:exactMatch	ncbitaxon:172863	Fowl 
 ictv:MSL17/ICTV19950370	Fowl adenovirus 8	skos:exactMatch	ncbitaxon:66295	Fowl adenovirus 8	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL17/ICTV19950371	Fowl adenovirus 9	skos:exactMatch	ncbitaxon:172864	Fowl adenovirus 9	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL17/ICTV19950451	Porcine adenovirus 5	skos:exactMatch	ncbitaxon:45370	Porcine adenovirus 5	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
+ictv:MSL17/ICTV19950452	Porcine adenovirus 6	skos:exactMatch	ncbitaxon:3899820	Porcine adenovirus 6	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL17/ICTV19950480	Tree shrew adenovirus 1	skos:exactMatch	ncbitaxon:47680	Tree shrew adenovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL17/ICTV19950483	Guanarito virus	skos:exactMatch	ncbitaxon:3052307	Guanarito virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL17/ICTV19950499	Duck astrovirus 1	skos:exactMatch	ncbitaxon:707882	Duck astrovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -13435,6 +13442,7 @@ ictv:MSL17/ICTV19951314	Bacillus phage G	skos:exactMatch	ncbitaxon:2884420	Bacil
 ictv:MSL17/ICTV19951316	Bacillus phage PBS1	skos:exactMatch	ncbitaxon:2884423	Bacillus phage PBS1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL17/ICTV19951317	Bacillus phage SP10	skos:exactMatch	ncbitaxon:941058	Bacillus phage SP10	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL17/ICTV19951318	Bacillus phage SP15	skos:exactMatch	ncbitaxon:1792032	Bacillus phage SP15	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
+ictv:MSL17/ICTV19951320	Bacillus phage SP50	skos:exactMatch	ncbitaxon:3758758	Bacillus phage SP50	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL17/ICTV19951321	Bacillus phage SP8	skos:exactMatch	ncbitaxon:2770327	Bacillus phage SP8	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL17/ICTV19951337	Enterobacteria phage Mu	skos:exactMatch	ncbitaxon:2681603	Enterobacteria phage Mu	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL17/ICTV19951338	Enterobacteria phage P1	skos:exactMatch	ncbitaxon:2886926	Enterobacteria phage P1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -14036,7 +14044,7 @@ ictv:MSL18/ICTV19710162	Radish mosaic virus	skos:exactMatch	ncbitaxon:328061	Rad
 ictv:MSL18/ICTV19710163	Red clover mottle virus	skos:exactMatch	ncbitaxon:12262	Red clover mottle virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
 ictv:MSL18/ICTV19710164	Squash mosaic virus	skos:exactMatch	ncbitaxon:12263	Squash mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL18/ICTV19710165	Broad bean true mosaic virus	skos:exactMatch	ncbitaxon:649890	Broad bean true mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
-ictv:MSL18/ICTV19710166	Cucumber mosaic virus	skos:exactMatch	ncbitaxon:12305	Cucumber mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
+ictv:MSL18/ICTV19710166	CMV	skos:exactMatch	ncbitaxon:12305	cucumber mosaic cucumovirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL18/ICTV19710168	Tomato aspermy virus	skos:exactMatch	ncbitaxon:12315	Tomato aspermy virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
 ictv:MSL18/ICTV19710169	Bombyx mori cypovirus 1	skos:exactMatch	ncbitaxon:110829	Bombyx mori cypovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL18/ICTV19710169	Cypovirus 1	skos:exactMatch	ncbitaxon:205895	Cypovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -16023,7 +16031,7 @@ ictv:MSL19/ICTV19710162	Radish mosaic virus	skos:exactMatch	ncbitaxon:328061	Rad
 ictv:MSL19/ICTV19710163	Red clover mottle virus	skos:exactMatch	ncbitaxon:12262	Red clover mottle virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
 ictv:MSL19/ICTV19710164	Squash mosaic virus	skos:exactMatch	ncbitaxon:12263	Squash mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL19/ICTV19710165	Broad bean true mosaic virus	skos:exactMatch	ncbitaxon:649890	Broad bean true mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
-ictv:MSL19/ICTV19710166	Cucumber mosaic virus	skos:exactMatch	ncbitaxon:12305	Cucumber mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
+ictv:MSL19/ICTV19710166	CMV	skos:exactMatch	ncbitaxon:12305	cucumber mosaic cucumovirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL19/ICTV19710168	Tomato aspermy virus	skos:exactMatch	ncbitaxon:12315	Tomato aspermy virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
 ictv:MSL19/ICTV19710169	Bombyx mori cypovirus 1	skos:exactMatch	ncbitaxon:110829	Bombyx mori cypovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL19/ICTV19710169	Cypovirus 1	skos:exactMatch	ncbitaxon:205895	Cypovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -18317,7 +18325,7 @@ ictv:MSL20/ICTV19710162	Radish mosaic virus	skos:exactMatch	ncbitaxon:328061	Rad
 ictv:MSL20/ICTV19710163	Red clover mottle virus	skos:exactMatch	ncbitaxon:12262	Red clover mottle virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
 ictv:MSL20/ICTV19710164	Squash mosaic virus	skos:exactMatch	ncbitaxon:12263	Squash mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL20/ICTV19710165	Broad bean true mosaic virus	skos:exactMatch	ncbitaxon:649890	Broad bean true mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
-ictv:MSL20/ICTV19710166	Cucumber mosaic virus	skos:exactMatch	ncbitaxon:12305	Cucumber mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
+ictv:MSL20/ICTV19710166	CMV	skos:exactMatch	ncbitaxon:12305	cucumber mosaic cucumovirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL20/ICTV19710168	Tomato aspermy virus	skos:exactMatch	ncbitaxon:12315	Tomato aspermy virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
 ictv:MSL20/ICTV19710169	Bombyx mori cypovirus 1	skos:exactMatch	ncbitaxon:110829	Bombyx mori cypovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL20/ICTV19710169	Cypovirus 1	skos:exactMatch	ncbitaxon:205895	Cypovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -20380,7 +20388,7 @@ ictv:MSL21/ICTV19710162	Radish mosaic virus	skos:exactMatch	ncbitaxon:328061	Rad
 ictv:MSL21/ICTV19710163	Red clover mottle virus	skos:exactMatch	ncbitaxon:12262	Red clover mottle virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
 ictv:MSL21/ICTV19710164	Squash mosaic virus	skos:exactMatch	ncbitaxon:12263	Squash mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL21/ICTV19710165	Broad bean true mosaic virus	skos:exactMatch	ncbitaxon:649890	Broad bean true mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
-ictv:MSL21/ICTV19710166	Cucumber mosaic virus	skos:exactMatch	ncbitaxon:12305	Cucumber mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
+ictv:MSL21/ICTV19710166	CMV	skos:exactMatch	ncbitaxon:12305	cucumber mosaic cucumovirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL21/ICTV19710168	Tomato aspermy virus	skos:exactMatch	ncbitaxon:12315	Tomato aspermy virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
 ictv:MSL21/ICTV19710169	Bombyx mori cypovirus 1	skos:exactMatch	ncbitaxon:110829	Bombyx mori cypovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL21/ICTV19710169	Cypovirus 1	skos:exactMatch	ncbitaxon:205895	Cypovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -22471,7 +22479,7 @@ ictv:MSL22/ICTV19710162	Radish mosaic virus	skos:exactMatch	ncbitaxon:328061	Rad
 ictv:MSL22/ICTV19710163	Red clover mottle virus	skos:exactMatch	ncbitaxon:12262	Red clover mottle virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
 ictv:MSL22/ICTV19710164	Squash mosaic virus	skos:exactMatch	ncbitaxon:12263	Squash mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL22/ICTV19710165	Broad bean true mosaic virus	skos:exactMatch	ncbitaxon:649890	Broad bean true mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
-ictv:MSL22/ICTV19710166	Cucumber mosaic virus	skos:exactMatch	ncbitaxon:12305	Cucumber mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
+ictv:MSL22/ICTV19710166	CMV	skos:exactMatch	ncbitaxon:12305	cucumber mosaic cucumovirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL22/ICTV19710168	Tomato aspermy virus	skos:exactMatch	ncbitaxon:12315	Tomato aspermy virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
 ictv:MSL22/ICTV19710169	Bombyx mori cypovirus 1	skos:exactMatch	ncbitaxon:110829	Bombyx mori cypovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL22/ICTV19710169	Cypovirus 1	skos:exactMatch	ncbitaxon:205895	Cypovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -24847,7 +24855,7 @@ ictv:MSL23/ICTV19710162	Radish mosaic virus	skos:exactMatch	ncbitaxon:328061	Rad
 ictv:MSL23/ICTV19710163	Red clover mottle virus	skos:exactMatch	ncbitaxon:12262	Red clover mottle virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
 ictv:MSL23/ICTV19710164	Squash mosaic virus	skos:exactMatch	ncbitaxon:12263	Squash mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL23/ICTV19710165	Broad bean true mosaic virus	skos:exactMatch	ncbitaxon:649890	Broad bean true mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
-ictv:MSL23/ICTV19710166	Cucumber mosaic virus	skos:exactMatch	ncbitaxon:12305	Cucumber mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
+ictv:MSL23/ICTV19710166	CMV	skos:exactMatch	ncbitaxon:12305	cucumber mosaic cucumovirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL23/ICTV19710168	Tomato aspermy virus	skos:exactMatch	ncbitaxon:12315	Tomato aspermy virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
 ictv:MSL23/ICTV19710169	Bombyx mori cypovirus 1	skos:exactMatch	ncbitaxon:110829	Bombyx mori cypovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL23/ICTV19710169	Cypovirus 1	skos:exactMatch	ncbitaxon:205895	Cypovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -27296,7 +27304,7 @@ ictv:MSL24/ICTV19710162	Radish mosaic virus	skos:exactMatch	ncbitaxon:328061	Rad
 ictv:MSL24/ICTV19710163	Red clover mottle virus	skos:exactMatch	ncbitaxon:12262	Red clover mottle virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
 ictv:MSL24/ICTV19710164	Squash mosaic virus	skos:exactMatch	ncbitaxon:12263	Squash mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL24/ICTV19710165	Broad bean true mosaic virus	skos:exactMatch	ncbitaxon:649890	Broad bean true mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
-ictv:MSL24/ICTV19710166	Cucumber mosaic virus	skos:exactMatch	ncbitaxon:12305	Cucumber mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
+ictv:MSL24/ICTV19710166	CMV	skos:exactMatch	ncbitaxon:12305	cucumber mosaic cucumovirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL24/ICTV19710168	Tomato aspermy virus	skos:exactMatch	ncbitaxon:12315	Tomato aspermy virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
 ictv:MSL24/ICTV19710169	Bombyx mori cypovirus 1	skos:exactMatch	ncbitaxon:110829	Bombyx mori cypovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL24/ICTV19710169	Cypovirus 1	skos:exactMatch	ncbitaxon:205895	Cypovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -29940,7 +29948,7 @@ ictv:MSL25/ICTV19710162	Radish mosaic virus	skos:exactMatch	ncbitaxon:328061	Rad
 ictv:MSL25/ICTV19710163	Red clover mottle virus	skos:exactMatch	ncbitaxon:12262	Red clover mottle virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
 ictv:MSL25/ICTV19710164	Squash mosaic virus	skos:exactMatch	ncbitaxon:12263	Squash mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL25/ICTV19710165	Broad bean true mosaic virus	skos:exactMatch	ncbitaxon:649890	Broad bean true mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
-ictv:MSL25/ICTV19710166	Cucumber mosaic virus	skos:exactMatch	ncbitaxon:12305	Cucumber mosaic virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
+ictv:MSL25/ICTV19710166	CMV	skos:exactMatch	ncbitaxon:12305	cucumber mosaic cucumovirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL25/ICTV19710168	Tomato aspermy virus	skos:exactMatch	ncbitaxon:12315	Tomato aspermy virus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-05
 ictv:MSL25/ICTV19710169	Bombyx mori cypovirus 1	skos:exactMatch	ncbitaxon:110829	Bombyx mori cypovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL25/ICTV19710169	Cypovirus 1	skos:exactMatch	ncbitaxon:205895	Cypovirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -131941,10 +131949,13 @@ ictv:MSL38/ICTV202214325	Mathaucavirus yangshanense	skos:exactMatch	ncbitaxon:30
 ictv:MSL38/ICTV202214326	Aobingvirus yangshanense	skos:exactMatch	ncbitaxon:3059732	Aobingvirus yangshanense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL38/ICTV202214327	Fervensviridae	skos:exactMatch	ncbitaxon:3044464	Fervensviridae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL38/ICTV202214328	Pungoviridae	skos:exactMatch	ncbitaxon:3044474	Pungoviridae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
+ictv:MSL38/ICTV202214329	Speroviridae	skos:exactMatch	ncbitaxon:3044478	Speroviridae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL38/ICTV202214330	Deepoceanvirus	skos:exactMatch	ncbitaxon:3044700	Deepoceanvirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL38/ICTV202214331	Flagovirus	skos:exactMatch	ncbitaxon:3044717	Flagovirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
+ictv:MSL38/ICTV202214332	Glazvirus	skos:exactMatch	ncbitaxon:3044722	Glazvirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL38/ICTV202214333	Deepoceanvirus guaymasense	skos:exactMatch	ncbitaxon:3059963	Deepoceanvirus guaymasense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL38/ICTV202214334	Flagovirus limi	skos:exactMatch	ncbitaxon:3060001	Flagovirus limi	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
+ictv:MSL38/ICTV202214335	Glazvirus inraei	skos:exactMatch	ncbitaxon:3060019	Glazvirus inraei	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL38/ICTV202214336	Aliceevansviridae	skos:exactMatch	ncbitaxon:3044455	Aliceevansviridae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL38/ICTV202214337	Vansinderenvirus	skos:exactMatch	ncbitaxon:3044850	Vansinderenvirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL38/ICTV202214338	Vansinderenvirus SW4	skos:exactMatch	ncbitaxon:3060784	Vansinderenvirus SW4	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -132338,6 +132349,9 @@ ictv:MSL38/ICTV202214724	Piscesmortuivirus	skos:exactMatch	ncbitaxon:3044793	Pis
 ictv:MSL38/ICTV202214725	Arsenicumvirus	skos:exactMatch	ncbitaxon:3044662	Arsenicumvirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL38/ICTV202214726	Peduovirus 11W	skos:exactMatch	ncbitaxon:3060525	Peduovirus 11W	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL38/ICTV202214727	Peduovirus AC1	skos:exactMatch	ncbitaxon:3060526	Peduovirus AC1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-10-20
+ictv:MSL38/ICTV202214728	Peduovirus SIAC10	skos:exactMatch	ncbitaxon:3060530	Peduovirus SIAC10	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL38/ICTV202214729	Peduovirus DC1	skos:exactMatch	ncbitaxon:3060527	Peduovirus DC1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL38/ICTV202214730	Peduovirus SIDE7	skos:exactMatch	ncbitaxon:3060531	Peduovirus SIDE7	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL38/ICTV202214731	Peduovirus P37	skos:exactMatch	ncbitaxon:3060529	Peduovirus P37	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL38/ICTV202214732	Peduovirus HQ103	skos:exactMatch	ncbitaxon:3060528	Peduovirus HQ103	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL38/ICTV202214733	Elveevirus cartapus	skos:exactMatch	ncbitaxon:3059977	Elveevirus cartapus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -151160,10 +151174,13 @@ ictv:MSL39/ICTV202214325	Mathaucavirus yangshanense	skos:exactMatch	ncbitaxon:30
 ictv:MSL39/ICTV202214326	Aobingvirus yangshanense	skos:exactMatch	ncbitaxon:3059732	Aobingvirus yangshanense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL39/ICTV202214327	Fervensviridae	skos:exactMatch	ncbitaxon:3044464	Fervensviridae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL39/ICTV202214328	Pungoviridae	skos:exactMatch	ncbitaxon:3044474	Pungoviridae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
+ictv:MSL39/ICTV202214329	Speroviridae	skos:exactMatch	ncbitaxon:3044478	Speroviridae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL39/ICTV202214330	Deepoceanvirus	skos:exactMatch	ncbitaxon:3044700	Deepoceanvirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL39/ICTV202214331	Flagovirus	skos:exactMatch	ncbitaxon:3044717	Flagovirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
+ictv:MSL39/ICTV202214332	Glazvirus	skos:exactMatch	ncbitaxon:3044722	Glazvirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL39/ICTV202214333	Deepoceanvirus guaymasense	skos:exactMatch	ncbitaxon:3059963	Deepoceanvirus guaymasense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL39/ICTV202214334	Flagovirus limi	skos:exactMatch	ncbitaxon:3060001	Flagovirus limi	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
+ictv:MSL39/ICTV202214335	Glazvirus inraei	skos:exactMatch	ncbitaxon:3060019	Glazvirus inraei	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL39/ICTV202214336	Aliceevansviridae	skos:exactMatch	ncbitaxon:3044455	Aliceevansviridae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL39/ICTV202214337	Vansinderenvirus	skos:exactMatch	ncbitaxon:3044850	Vansinderenvirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL39/ICTV202214338	Vansinderenvirus SW4	skos:exactMatch	ncbitaxon:3060784	Vansinderenvirus SW4	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -151557,6 +151574,9 @@ ictv:MSL39/ICTV202214724	Piscesmortuivirus	skos:exactMatch	ncbitaxon:3044793	Pis
 ictv:MSL39/ICTV202214725	Arsenicumvirus	skos:exactMatch	ncbitaxon:3044662	Arsenicumvirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL39/ICTV202214726	Peduovirus 11W	skos:exactMatch	ncbitaxon:3060525	Peduovirus 11W	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL39/ICTV202214727	Peduovirus AC1	skos:exactMatch	ncbitaxon:3060526	Peduovirus AC1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-10-20
+ictv:MSL39/ICTV202214728	Peduovirus SIAC10	skos:exactMatch	ncbitaxon:3060530	Peduovirus SIAC10	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL39/ICTV202214729	Peduovirus DC1	skos:exactMatch	ncbitaxon:3060527	Peduovirus DC1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL39/ICTV202214730	Peduovirus SIDE7	skos:exactMatch	ncbitaxon:3060531	Peduovirus SIDE7	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL39/ICTV202214731	Peduovirus P37	skos:exactMatch	ncbitaxon:3060529	Peduovirus P37	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL39/ICTV202214732	Peduovirus HQ103	skos:exactMatch	ncbitaxon:3060528	Peduovirus HQ103	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL39/ICTV202214733	Elveevirus cartapus	skos:exactMatch	ncbitaxon:3059977	Elveevirus cartapus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -174597,10 +174617,13 @@ ictv:MSL40/ICTV202214325	Mathaucavirus yangshanense	skos:exactMatch	ncbitaxon:30
 ictv:MSL40/ICTV202214326	Aobingvirus yangshanense	skos:exactMatch	ncbitaxon:3059732	Aobingvirus yangshanense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL40/ICTV202214327	Fervensviridae	skos:exactMatch	ncbitaxon:3044464	Fervensviridae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL40/ICTV202214328	Pungoviridae	skos:exactMatch	ncbitaxon:3044474	Pungoviridae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
+ictv:MSL40/ICTV202214329	Speroviridae	skos:exactMatch	ncbitaxon:3044478	Speroviridae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL40/ICTV202214330	Deepoceanvirus	skos:exactMatch	ncbitaxon:3044700	Deepoceanvirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL40/ICTV202214331	Flagovirus	skos:exactMatch	ncbitaxon:3044717	Flagovirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
+ictv:MSL40/ICTV202214332	Glazvirus	skos:exactMatch	ncbitaxon:3044722	Glazvirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL40/ICTV202214333	Deepoceanvirus guaymasense	skos:exactMatch	ncbitaxon:3059963	Deepoceanvirus guaymasense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL40/ICTV202214334	Flagovirus limi	skos:exactMatch	ncbitaxon:3060001	Flagovirus limi	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
+ictv:MSL40/ICTV202214335	Glazvirus inraei	skos:exactMatch	ncbitaxon:3060019	Glazvirus inraei	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL40/ICTV202214336	Aliceevansviridae	skos:exactMatch	ncbitaxon:3044455	Aliceevansviridae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL40/ICTV202214337	Vansinderenvirus	skos:exactMatch	ncbitaxon:3044850	Vansinderenvirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL40/ICTV202214338	Vansinderenvirus SW4	skos:exactMatch	ncbitaxon:3060784	Vansinderenvirus SW4	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -174994,6 +175017,9 @@ ictv:MSL40/ICTV202214724	Piscesmortuivirus	skos:exactMatch	ncbitaxon:3044793	Pis
 ictv:MSL40/ICTV202214725	Arsenicumvirus	skos:exactMatch	ncbitaxon:3044662	Arsenicumvirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL40/ICTV202214726	Peduovirus 11W	skos:exactMatch	ncbitaxon:3060525	Peduovirus 11W	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL40/ICTV202214727	Peduovirus AC1	skos:exactMatch	ncbitaxon:3060526	Peduovirus AC1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-10-20
+ictv:MSL40/ICTV202214728	Peduovirus SIAC10	skos:exactMatch	ncbitaxon:3060530	Peduovirus SIAC10	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL40/ICTV202214729	Peduovirus DC1	skos:exactMatch	ncbitaxon:3060527	Peduovirus DC1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL40/ICTV202214730	Peduovirus SIDE7	skos:exactMatch	ncbitaxon:3060531	Peduovirus SIDE7	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL40/ICTV202214731	Peduovirus P37	skos:exactMatch	ncbitaxon:3060529	Peduovirus P37	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL40/ICTV202214732	Peduovirus HQ103	skos:exactMatch	ncbitaxon:3060528	Peduovirus HQ103	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
 ictv:MSL40/ICTV202214733	Elveevirus cartapus	skos:exactMatch	ncbitaxon:3059977	Elveevirus cartapus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
@@ -199011,10 +199037,13 @@ ictv:MSL41/ICTV202214325	Mathaucavirus yangshanense	skos:exactMatch	ncbitaxon:30
 ictv:MSL41/ICTV202214326	Aobingvirus yangshanense	skos:exactMatch	ncbitaxon:3059732	Aobingvirus yangshanense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-04-23
 ictv:MSL41/ICTV202214327	Fervensviridae	skos:exactMatch	ncbitaxon:3044464	Fervensviridae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-04-23
 ictv:MSL41/ICTV202214328	Pungoviridae	skos:exactMatch	ncbitaxon:3044474	Pungoviridae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-04-23
+ictv:MSL41/ICTV202214329	Speroviridae	skos:exactMatch	ncbitaxon:3044478	Speroviridae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202214330	Deepoceanvirus	skos:exactMatch	ncbitaxon:3044700	Deepoceanvirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-04-23
 ictv:MSL41/ICTV202214331	Flagovirus	skos:exactMatch	ncbitaxon:3044717	Flagovirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-04-23
+ictv:MSL41/ICTV202214332	Glazvirus	skos:exactMatch	ncbitaxon:3044722	Glazvirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202214333	Deepoceanvirus guaymasense	skos:exactMatch	ncbitaxon:3059963	Deepoceanvirus guaymasense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-04-23
 ictv:MSL41/ICTV202214334	Flagovirus limi	skos:exactMatch	ncbitaxon:3060001	Flagovirus limi	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-04-23
+ictv:MSL41/ICTV202214335	Glazvirus inraei	skos:exactMatch	ncbitaxon:3060019	Glazvirus inraei	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202214336	Aliceevansviridae	skos:exactMatch	ncbitaxon:3044455	Aliceevansviridae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-04-23
 ictv:MSL41/ICTV202214337	Vansinderenvirus	skos:exactMatch	ncbitaxon:3044850	Vansinderenvirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-04-23
 ictv:MSL41/ICTV202214338	Vansinderenvirus SW4	skos:exactMatch	ncbitaxon:3060784	Vansinderenvirus SW4	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-04-23
@@ -199407,6 +199436,9 @@ ictv:MSL41/ICTV202214724	Piscesmortuivirus	skos:exactMatch	ncbitaxon:3044793	Pis
 ictv:MSL41/ICTV202214725	Arsenicumvirus	skos:exactMatch	ncbitaxon:3044662	Arsenicumvirus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-04-23
 ictv:MSL41/ICTV202214726	Peduovirus 11W	skos:exactMatch	ncbitaxon:3060525	Peduovirus 11W	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-04-23
 ictv:MSL41/ICTV202214727	Peduovirus AC1	skos:exactMatch	ncbitaxon:3060526	Peduovirus AC1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-04-23
+ictv:MSL41/ICTV202214728	Peduovirus SIAC10	skos:exactMatch	ncbitaxon:3060530	Peduovirus SIAC10	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202214729	Peduovirus DC1	skos:exactMatch	ncbitaxon:3060527	Peduovirus DC1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202214730	Peduovirus SIDE7	skos:exactMatch	ncbitaxon:3060531	Peduovirus SIDE7	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202214731	Peduovirus P37	skos:exactMatch	ncbitaxon:3060529	Peduovirus P37	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-04-23
 ictv:MSL41/ICTV202214732	Peduovirus HQ103	skos:exactMatch	ncbitaxon:3060528	Peduovirus HQ103	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-04-23
 ictv:MSL41/ICTV202214733	Elveevirus cartapus	skos:exactMatch	ncbitaxon:3059977	Elveevirus cartapus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-04-23
@@ -205343,8 +205375,48 @@ ictv:MSL41/ICTV202521978	Ramphavirus 80	skos:exactMatch	ncbitaxon:3703472	Rampha
 ictv:MSL41/ICTV202521979	Pilosavirus PMBT54	skos:exactMatch	ncbitaxon:3703420	Pilosavirus PMBT54	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202521980	Pythonevirus WXY	skos:exactMatch	ncbitaxon:3703469	Pythonevirus WXY	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202521981	Serpentivirus dolos	skos:exactMatch	ncbitaxon:3703524	Serpentivirus dolos	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202521982	Scytalavirus 6	skos:exactMatch	ncbitaxon:3703518	Scytalavirus 6	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202521983	Senectutivirus 138	skos:exactMatch	ncbitaxon:3703522	Senectutivirus 138	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202521984	Femenvirus 11	skos:exactMatch	ncbitaxon:3702864	Femenvirus 11	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202521985	Femenvirus 13	skos:exactMatch	ncbitaxon:3702865	Femenvirus 13	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202521986	Vittavirus Vaf1	skos:exactMatch	ncbitaxon:3703667	Vittavirus Vaf1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202521987	Amentovirus 10	skos:exactMatch	ncbitaxon:3702477	Amentovirus 10	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202521988	Amentovirus 39	skos:exactMatch	ncbitaxon:3702478	Amentovirus 39	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202521989	Amentovirus 42	skos:exactMatch	ncbitaxon:3702479	Amentovirus 42	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202521990	Fasceasvirus 1	skos:exactMatch	ncbitaxon:3702856	Fasceasvirus 1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202521991	Fasceasvirus 25	skos:exactMatch	ncbitaxon:3702857	Fasceasvirus 25	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202521992	Fasceasvirus 30	skos:exactMatch	ncbitaxon:3702858	Fasceasvirus 30	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202521993	Adiligaturavirus 24	skos:exactMatch	ncbitaxon:3702384	Adiligaturavirus 24	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202521994	Antiavirus 20	skos:exactMatch	ncbitaxon:3702499	Antiavirus 20	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202521995	Aclydivirus 6	skos:exactMatch	ncbitaxon:3702380	Aclydivirus 6	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202521996	Strophivirus 33	skos:exactMatch	ncbitaxon:3703565	Strophivirus 33	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202521997	Strophivirus 31	skos:exactMatch	ncbitaxon:3703563	Strophivirus 31	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202521998	Strophivirus 32	skos:exactMatch	ncbitaxon:3703564	Strophivirus 32	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202521999	Strophivirus 36	skos:exactMatch	ncbitaxon:3703567	Strophivirus 36	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522000	Strophivirus 37	skos:exactMatch	ncbitaxon:3703568	Strophivirus 37	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522001	Strophivirus 34	skos:exactMatch	ncbitaxon:3703566	Strophivirus 34	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522002	Meandervirus 44	skos:exactMatch	ncbitaxon:3703214	Meandervirus 44	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522003	Meandervirus 40	skos:exactMatch	ncbitaxon:3703213	Meandervirus 40	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522004	Semitavirus 43	skos:exactMatch	ncbitaxon:3703521	Semitavirus 43	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522005	Itinerivirus 12	skos:exactMatch	ncbitaxon:3703017	Itinerivirus 12	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522006	Actovirus 45	skos:exactMatch	ncbitaxon:3702383	Actovirus 45	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522007	Actovirus 41	skos:exactMatch	ncbitaxon:3702382	Actovirus 41	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522008	Aspidivirus 14	skos:exactMatch	ncbitaxon:3702507	Aspidivirus 14	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522009	Aspidivirus 19	skos:exactMatch	ncbitaxon:3702508	Aspidivirus 19	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522010	Galbavirus 17	skos:exactMatch	ncbitaxon:3702909	Galbavirus 17	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522011	Reticulivirus 11	skos:exactMatch	ncbitaxon:3703476	Reticulivirus 11	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522012	Pubesvirus 29	skos:exactMatch	ncbitaxon:3703466	Pubesvirus 29	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522013	Prolivirus 37	skos:exactMatch	ncbitaxon:3703461	Prolivirus 37	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522014	Plantarivirus 147	skos:exactMatch	ncbitaxon:3703426	Plantarivirus 147	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522015	Propagovirus nuni	skos:exactMatch	ncbitaxon:3703462	Propagovirus nuni	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522016	Sarmentivirus 25	skos:exactMatch	ncbitaxon:3703514	Sarmentivirus 25	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522017	Acontivirus 21	skos:exactMatch	ncbitaxon:3702381	Acontivirus 21	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522018	Abaestuovirus 8	skos:exactMatch	ncbitaxon:3702378	Abaestuovirus 8	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522019	Xiphivirus 2	skos:exactMatch	ncbitaxon:3703694	Xiphivirus 2	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522020	Catenatiovirus 32	skos:exactMatch	ncbitaxon:3702651	Catenatiovirus 32	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522021	Staminivirus 6	skos:exactMatch	ncbitaxon:3703557	Staminivirus 6	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522022	Circumitovirus 48	skos:exactMatch	ncbitaxon:3702715	Circumitovirus 48	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522023	Viscerivirus 525	skos:exactMatch	ncbitaxon:3703663	Viscerivirus 525	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522024	Thomixvirus zuza	skos:exactMatch	ncbitaxon:3703603	Thomixvirus zuza	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522025	Tsigisvirus beckeri	skos:exactMatch	ncbitaxon:3703622	Tsigisvirus beckeri	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522026	Tsigisvirus orcuttae	skos:exactMatch	ncbitaxon:3703623	Tsigisvirus orcuttae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
@@ -205353,6 +205425,7 @@ ictv:MSL41/ICTV202522028	Hacxwiqakvirus coweni	skos:exactMatch	ncbitaxon:3702982
 ictv:MSL41/ICTV202522029	Hacxwiqakvirus wheati	skos:exactMatch	ncbitaxon:3702984	Hacxwiqakvirus wheati	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522030	Hacxwiqakvirus orphanae	skos:exactMatch	ncbitaxon:3702983	Hacxwiqakvirus orphanae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522031	Calorvirus huberae	skos:exactMatch	ncbitaxon:3702615	Calorvirus huberae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522032	Calorvirus bachi	skos:exactMatch	ncbitaxon:3702614	Calorvirus bachi	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522033	Obscurovirus verheini	skos:exactMatch	ncbitaxon:3703325	Obscurovirus verheini	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522034	Tanggwanvirus davisi	skos:exactMatch	ncbitaxon:3703592	Tanggwanvirus davisi	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522035	Caldusvirus fisheri	skos:exactMatch	ncbitaxon:3702613	Caldusvirus fisheri	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
@@ -205475,6 +205548,7 @@ ictv:MSL41/ICTV202522176	Brevipenbrevirus orthopteran2	skos:exactMatch	ncbitaxon
 ictv:MSL41/ICTV202522207	Chaphamavirus chiropteran3	skos:exactMatch	ncbitaxon:3702663	Chaphamavirus chiropteran3	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522208	Chaphamavirus eulipotyphla1	skos:exactMatch	ncbitaxon:3702664	Chaphamavirus eulipotyphla1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522209	Chaphamavirus psittacine4	skos:exactMatch	ncbitaxon:3702688	Chaphamavirus psittacine4	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522210	Chaphamavirus squamatid1	skos:exactMatch	ncbitaxon:3702689	Chaphamavirus squamatid1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522214	Alphambiguivirus alternariae	skos:exactMatch	ncbitaxon:3702442	Alphambiguivirus alternariae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522215	Alphambiguivirus botriensis	skos:exactMatch	ncbitaxon:3702448	Alphambiguivirus botriensis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522216	Alphambiguivirus colletotrichae	skos:exactMatch	ncbitaxon:3702449	Alphambiguivirus colletotrichae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
@@ -205717,12 +205791,20 @@ ictv:MSL41/ICTV202522452	Poacevirus avenae	skos:exactMatch	ncbitaxon:3703428	Poa
 ictv:MSL41/ICTV202522453	Potyvirus heraclei	skos:exactMatch	ncbitaxon:3703459	Potyvirus heraclei	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522454	Potyvirus shilinense	skos:exactMatch	ncbitaxon:3703460	Potyvirus shilinense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522455	Chlorovirus primosyngense	skos:exactMatch	ncbitaxon:3702707	Chlorovirus primosyngense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522456	Chlorovirus alphanebraskense	skos:exactMatch	ncbitaxon:3702696	Chlorovirus alphanebraskense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522457	Chlorovirus syngense	skos:exactMatch	ncbitaxon:3702709	Chlorovirus syngense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522458	Chlorovirus alphaalkalinus	skos:exactMatch	ncbitaxon:3702694	Chlorovirus alphaalkalinus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522459	Chlorovirus alphagardense	skos:exactMatch	ncbitaxon:3702695	Chlorovirus alphagardense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522460	Chlorovirus longinquus	skos:exactMatch	ncbitaxon:3702703	Chlorovirus longinquus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522461	Chlorovirus betanebraskense	skos:exactMatch	ncbitaxon:3702698	Chlorovirus betanebraskense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522462	Chlorovirus novaeterrae	skos:exactMatch	ncbitaxon:3702706	Chlorovirus novaeterrae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522463	Chlorovirus guatemalense	skos:exactMatch	ncbitaxon:3702701	Chlorovirus guatemalense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522464	Chlorovirus gammanebraskense	skos:exactMatch	ncbitaxon:3702700	Chlorovirus gammanebraskense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522465	Chlorovirus arcticum	skos:exactMatch	ncbitaxon:3702697	Chlorovirus arcticum	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522466	Chlorovirus solusgardense	skos:exactMatch	ncbitaxon:3702708	Chlorovirus solusgardense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522467	Chlorovirus gammagardense	skos:exactMatch	ncbitaxon:3702699	Chlorovirus gammagardense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522468	Chlorovirus multilacus	skos:exactMatch	ncbitaxon:3702705	Chlorovirus multilacus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522469	Chlorovirus insulalacus	skos:exactMatch	ncbitaxon:3702702	Chlorovirus insulalacus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522470	Chlorovirus minnesotense	skos:exactMatch	ncbitaxon:3702704	Chlorovirus minnesotense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522471	Tupavirus delphini	skos:exactMatch	ncbitaxon:3703633	Tupavirus delphini	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522472	Begomovirus clitoriae	skos:exactMatch	ncbitaxon:3702529	Begomovirus clitoriae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
@@ -205807,12 +205889,14 @@ ictv:MSL41/ICTV202522554	Betahypovirus annulohypoxyli	skos:exactMatch	ncbitaxon:
 ictv:MSL41/ICTV202522555	Dinovernavirus albopictus	skos:exactMatch	ncbitaxon:3702773	Dinovernavirus albopictus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522556	Mastrevirus cenchri	skos:exactMatch	ncbitaxon:3703209	Mastrevirus cenchri	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522557	Mastrevirus croci	skos:exactMatch	ncbitaxon:3372899	Mastrevirus croci	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-07-20
+ictv:MSL41/ICTV202522558	Mastrevirus mexicoense	skos:exactMatch	ncbitaxon:3703210	Mastrevirus mexicoense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522559	Mastrevirus purpurei	skos:exactMatch	ncbitaxon:3703211	Mastrevirus purpurei	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522560	Mastrevirus tripterygii	skos:exactMatch	ncbitaxon:3703212	Mastrevirus tripterygii	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522570	Carjivirus coli	skos:exactMatch	ncbitaxon:3702638	Carjivirus coli	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522572	Carjivirus rectalis	skos:exactMatch	ncbitaxon:3702643	Carjivirus rectalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522575	Carjivirus autochthophagica	skos:exactMatch	ncbitaxon:3702636	Carjivirus autochthophagica	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522578	Carjivirus vaga	skos:exactMatch	ncbitaxon:3702645	Carjivirus vaga	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522579	Carjivirus colonirectalis	skos:exactMatch	ncbitaxon:3702639	Carjivirus colonirectalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522585	Crabavirus typica	skos:exactMatch	ncbitaxon:3702746	Crabavirus typica	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522601	Kehishuvirus intestinalimedialis	skos:exactMatch	ncbitaxon:3703071	Kehishuvirus intestinalimedialis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522602	Kehishuvirus anthropica	skos:exactMatch	ncbitaxon:3703068	Kehishuvirus anthropica	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
@@ -205829,6 +205913,7 @@ ictv:MSL41/ICTV202522635	Betaourmiavirus mollusci	skos:exactMatch	ncbitaxon:3702
 ictv:MSL41/ICTV202522636	Betaourmiavirus conchyli	skos:exactMatch	ncbitaxon:3702567	Betaourmiavirus conchyli	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522637	Gammaourmiavirus conchyli	skos:exactMatch	ncbitaxon:3702944	Gammaourmiavirus conchyli	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522638	Deltaourmiavirus fluminis	skos:exactMatch	ncbitaxon:3702766	Deltaourmiavirus fluminis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522640	Epsilonourmiavirus lespedezae	skos:exactMatch	ncbitaxon:3702841	Epsilonourmiavirus lespedezae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522641	Epsilonourmiavirus croci	skos:exactMatch	ncbitaxon:3702840	Epsilonourmiavirus croci	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522642	Zetaourmiavirus culex	skos:exactMatch	ncbitaxon:3703721	Zetaourmiavirus culex	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522643	Zetaourmiavirus insecti	skos:exactMatch	ncbitaxon:3703722	Zetaourmiavirus insecti	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
@@ -206019,6 +206104,10 @@ ictv:MSL41/ICTV202522824	Pakpunavirus hhbs181	skos:exactMatch	ncbitaxon:3703372	
 ictv:MSL41/ICTV202522825	Pakpunavirus hhbs91	skos:exactMatch	ncbitaxon:3703373	Pakpunavirus hhbs91	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522826	Pbunavirus hhbs511	skos:exactMatch	ncbitaxon:3703381	Pbunavirus hhbs511	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522827	Pbunavirus hhbs122	skos:exactMatch	ncbitaxon:3703380	Pbunavirus hhbs122	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522828	Webervirus gbh029	skos:exactMatch	ncbitaxon:3703680	Webervirus gbh029	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522829	Drulisvirus gbh038	skos:exactMatch	ncbitaxon:3702801	Drulisvirus gbh038	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522830	Drulisvirus gbh001	skos:exactMatch	ncbitaxon:3702800	Drulisvirus gbh001	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522831	Przondovirus gbh014	skos:exactMatch	ncbitaxon:3703463	Przondovirus gbh014	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522832	Alphacytorhabdovirus lonicerae	skos:exactMatch	ncbitaxon:3702416	Alphacytorhabdovirus lonicerae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522833	Betacytorhabdovirus dioscoreae	skos:exactMatch	ncbitaxon:3702539	Betacytorhabdovirus dioscoreae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522834	Betacytorhabdovirus pyri	skos:exactMatch	ncbitaxon:3702540	Betacytorhabdovirus pyri	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
@@ -206107,49 +206196,96 @@ ictv:MSL41/ICTV202522916	Luojiashanvirus Bhz63	skos:exactMatch	ncbitaxon:3703159
 ictv:MSL41/ICTV202522917	Lutzvirus UFV02	skos:exactMatch	ncbitaxon:3703161	Lutzvirus UFV02	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522918	Mariborvirus bacuniF1	skos:exactMatch	ncbitaxon:3703192	Mariborvirus bacuniF1	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522920	Algophervirus faecalis	skos:exactMatch	ncbitaxon:3702395	Algophervirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522921	Alnafnavirus faecalis	skos:exactMatch	ncbitaxon:3702405	Alnafnavirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522922	Alnifnivirus faecalis	skos:exactMatch	ncbitaxon:3702406	Alnifnivirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522923	Alcanfavirus faecalis	skos:exactMatch	ncbitaxon:3702387	Alcanfavirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522924	Alcanivirus faecalis	skos:exactMatch	ncbitaxon:3702388	Alcanivirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522925	Algomorvirus faecalis	skos:exactMatch	ncbitaxon:3702394	Algomorvirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522926	Algopmovirus faecalis	skos:exactMatch	ncbitaxon:3702396	Algopmovirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522927	Alimacvirus faecalis	skos:exactMatch	ncbitaxon:3702398	Alimacvirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522928	Almumusvirus tissus	skos:exactMatch	ncbitaxon:3702403	Almumusvirus tissus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522929	Alnoufnouvirus faecalis	skos:exactMatch	ncbitaxon:3702407	Alnoufnouvirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522930	Alpecorivirus sanguineae	skos:exactMatch	ncbitaxon:3702410	Alpecorivirus sanguineae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522931	Alcafavirus faecalis	skos:exactMatch	ncbitaxon:3702386	Alcafavirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522932	Alciorovirus intestinalis	skos:exactMatch	ncbitaxon:3702390	Alciorovirus intestinalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522933	Alcryvirus antarcticaense	skos:exactMatch	ncbitaxon:3702391	Alcryvirus antarcticaense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522934	Alhyhydvirus faecalis	skos:exactMatch	ncbitaxon:3702397	Alhyhydvirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522935	Alpaglavirus faecalis	skos:exactMatch	ncbitaxon:3702409	Alpaglavirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522936	Alepusivirus faecalis	skos:exactMatch	ncbitaxon:3702392	Alepusivirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522937	Almusivirus animavivens	skos:exactMatch	ncbitaxon:3702404	Almusivirus animavivens	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522938	Alpecusivirus jiangsuense	skos:exactMatch	ncbitaxon:3702411	Alpecusivirus jiangsuense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522939	Alydrochavirus faecalis	skos:exactMatch	ncbitaxon:3702473	Alydrochavirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522940	Alcapybaravirus parvus	skos:exactMatch	ncbitaxon:3702389	Alcapybaravirus parvus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522941	Almacaqusvirus entericus	skos:exactMatch	ncbitaxon:3702400	Almacaqusvirus entericus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522942	Almaoniuvirus tibetanicus	skos:exactMatch	ncbitaxon:3702401	Almaoniuvirus tibetanicus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522943	Almiluvirus faecalis	skos:exactMatch	ncbitaxon:3702402	Almiluvirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522944	Alpacinvirus sinensis	skos:exactMatch	ncbitaxon:3702408	Alpacinvirus sinensis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522945	Alzhudosvirus choerus	skos:exactMatch	ncbitaxon:3702474	Alzhudosvirus choerus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522946	Alzhuvirus porcinus	skos:exactMatch	ncbitaxon:3702475	Alzhuvirus porcinus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522947	Largivirus asiaticus	skos:exactMatch	ncbitaxon:3703090	Largivirus asiaticus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522948	Aminivirus ruegeriae	skos:exactMatch	ncbitaxon:3702480	Aminivirus ruegeriae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522949	Avacavirus tissus	skos:exactMatch	ncbitaxon:3702512	Avacavirus tissus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522950	Minimarinivirus citromicrobii	skos:exactMatch	ncbitaxon:3703226	Minimarinivirus citromicrobii	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522951	Piticivirus americanense	skos:exactMatch	ncbitaxon:3703422	Piticivirus americanense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522952	Sonoravirus desertense	skos:exactMatch	ncbitaxon:3703547	Sonoravirus desertense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522953	Vimicrovirus vibrionis	skos:exactMatch	ncbitaxon:3703660	Vimicrovirus vibrionis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522954	Pseudophixvirus profundis	skos:exactMatch	ncbitaxon:3703465	Pseudophixvirus profundis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522955	Paraphixvirus bathycus	skos:exactMatch	ncbitaxon:3703376	Paraphixvirus bathycus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522956	Periphixvirus piscinus	skos:exactMatch	ncbitaxon:3703401	Periphixvirus piscinus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522957	Gokucipiengivirus nigerianus	skos:exactMatch	ncbitaxon:3702950	Gokucipiengivirus nigerianus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522958	Gokugallopavovirus exiguus	skos:exactMatch	ncbitaxon:3702951	Gokugallopavovirus exiguus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522959	Gokumacromysvirus microtus	skos:exactMatch	ncbitaxon:3702952	Gokumacromysvirus microtus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522960	Gokumagnusmusvirus minimus	skos:exactMatch	ncbitaxon:3702953	Gokumagnusmusvirus minimus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522961	Huficovirus zhenjiangense	skos:exactMatch	ncbitaxon:3702993	Huficovirus zhenjiangense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522962	Khonivirus shangense	skos:exactMatch	ncbitaxon:3703081	Khonivirus shangense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522963	Cionrobuvirus intraciae	skos:exactMatch	ncbitaxon:3702713	Cionrobuvirus intraciae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522964	Crownevirus crochiae	skos:exactMatch	ncbitaxon:3702753	Crownevirus crochiae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522965	Cypriminnovirus animagenonis	skos:exactMatch	ncbitaxon:3702759	Cypriminnovirus animagenonis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522966	Eelrivirus metsediae	skos:exactMatch	ncbitaxon:3702804	Eelrivirus metsediae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522967	Hulichivirus shiae	skos:exactMatch	ncbitaxon:3702994	Hulichivirus shiae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522968	Leuciminnovirus minnonis	skos:exactMatch	ncbitaxon:3703102	Leuciminnovirus minnonis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522969	Mellcarnivirus hemonis	skos:exactMatch	ncbitaxon:3703216	Mellcarnivirus hemonis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522970	Melllinguisvirus molysis	skos:exactMatch	ncbitaxon:3703217	Melllinguisvirus molysis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522971	Minnosuevirus metae	skos:exactMatch	ncbitaxon:3703227	Minnosuevirus metae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522972	Minnowtisvirus animetae	skos:exactMatch	ncbitaxon:3703228	Minnowtisvirus animetae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522973	Minsuevirus tissus	skos:exactMatch	ncbitaxon:3703229	Minsuevirus tissus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522974	Paruchinvirus fabiaonis	skos:exactMatch	ncbitaxon:3703377	Paruchinvirus fabiaonis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522975	Renleivirus checis	skos:exactMatch	ncbitaxon:3703475	Renleivirus checis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522976	Saanivirus lacunae	skos:exactMatch	ncbitaxon:3703501	Saanivirus lacunae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522977	Sahondenvirus ancense	skos:exactMatch	ncbitaxon:3703511	Sahondenvirus ancense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522978	Sbenevirus ronchense	skos:exactMatch	ncbitaxon:3703515	Sbenevirus ronchense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522979	Shuntenvirus chomettense	skos:exactMatch	ncbitaxon:3703532	Shuntenvirus chomettense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522980	Sontinvirus epinatense	skos:exactMatch	ncbitaxon:3703548	Sontinvirus epinatense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522981	Sphagnuvirus macicentrae	skos:exactMatch	ncbitaxon:3703550	Sphagnuvirus macicentrae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522982	Sphignavirus magoutense	skos:exactMatch	ncbitaxon:3703552	Sphignavirus magoutense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522983	Storgivirus baiae	skos:exactMatch	ncbitaxon:3703560	Storgivirus baiae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522985	Wiyavirus colsediae	skos:exactMatch	ncbitaxon:3703687	Wiyavirus colsediae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522986	Mohgevirus testudinis	skos:exactMatch	ncbitaxon:3703249	Mohgevirus testudinis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522987	Sehtuvirus meseepiae	skos:exactMatch	ncbitaxon:3703520	Sehtuvirus meseepiae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522988	Tramlacvirus saintpetis	skos:exactMatch	ncbitaxon:3703619	Tramlacvirus saintpetis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522989	Pacdirvirus facealis	skos:exactMatch	ncbitaxon:3703369	Pacdirvirus facealis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522990	Piapivirus hemonis	skos:exactMatch	ncbitaxon:3703412	Piapivirus hemonis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522991	Picaglacivirus Antarcticense	skos:exactMatch	ncbitaxon:3703413	Picaglacivirus Antarcticense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522992	Picionavirus intestinalis	skos:exactMatch	ncbitaxon:3703414	Picionavirus intestinalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522993	Piciorovirus intestinalis	skos:exactMatch	ncbitaxon:3703415	Piciorovirus intestinalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202522994	Picominovirus tissus	skos:exactMatch	ncbitaxon:3703416	Picominovirus tissus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522995	Picryovirus Antarcticense	skos:exactMatch	ncbitaxon:3703417	Picryovirus Antarcticense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522996	Piglaglavirus Antarcticense	skos:exactMatch	ncbitaxon:3703418	Piglaglavirus Antarcticense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202522997	Pigophevirus faecalis	skos:exactMatch	ncbitaxon:3703419	Pigophevirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202522998	Pimethasivirus fortunaense	skos:exactMatch	ncbitaxon:3703421	Pimethasivirus fortunaense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202522999	Sahondevirus altiligeriense	skos:exactMatch	ncbitaxon:3703512	Sahondevirus altiligeriense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202523000	Sphegnavirus ronelense	skos:exactMatch	ncbitaxon:3703551	Sphegnavirus ronelense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202523001	Sphinavirus crozetense	skos:exactMatch	ncbitaxon:3703553	Sphinavirus crozetense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202523002	Subabevirus faecalis	skos:exactMatch	ncbitaxon:3703571	Subabevirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
+ictv:MSL41/ICTV202523003	Subethovenvirus faecalis	skos:exactMatch	ncbitaxon:3703572	Subethovenvirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202523004	Sucapyvirus faecalis	skos:exactMatch	ncbitaxon:3703573	Sucapyvirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202523005	Sutorvirus faecalis	skos:exactMatch	ncbitaxon:3703576	Sutorvirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202523006	Suydrochavirus faecalis	skos:exactMatch	ncbitaxon:3703577	Suydrochavirus faecalis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202523012	Rominovirus tissus	skos:exactMatch	ncbitaxon:3703496	Rominovirus tissus	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202523015	Chaparrovirus phaseoli	skos:exactMatch	ncbitaxon:3702653	Chaparrovirus phaseoli	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202523016	Chaparrovirus rhizobi	skos:exactMatch	ncbitaxon:3702654	Chaparrovirus rhizobi	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202523017	Chaparrovirus tepoztlanense	skos:exactMatch	ncbitaxon:3702655	Chaparrovirus tepoztlanense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202523018	Cumcionavirus ventris	skos:exactMatch	ncbitaxon:3702757	Cumcionavirus ventris	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202523019	Faseolivirus fabavivens	skos:exactMatch	ncbitaxon:3702859	Faseolivirus fabavivens	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202523020	Faseolivirus mexicanense	skos:exactMatch	ncbitaxon:3702860	Faseolivirus mexicanense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202523021	Microsonovirus testudinis	skos:exactMatch	ncbitaxon:3703221	Microsonovirus testudinis	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
@@ -206159,6 +206295,7 @@ ictv:MSL41/ICTV202523024	Planktonivirus quarti	skos:exactMatch	ncbitaxon:3703425
 ictv:MSL41/ICTV202523025	Seavirus roseobacteriae	skos:exactMatch	ncbitaxon:3703519	Seavirus roseobacteriae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202523026	Micisonovirus desertense	skos:exactMatch	ncbitaxon:3703220	Micisonovirus desertense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202523027	Ascunsovirus oldenburgi	skos:exactMatch	ncbitaxon:2995135	Ascunsovirus oldenburgi	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-04-23
+ictv:MSL41/ICTV202523028	Circularivirus animaliense	skos:exactMatch	ncbitaxon:3702714	Circularivirus animaliense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202523029	Pentonivirus florentiae	skos:exactMatch	ncbitaxon:3703399	Pentonivirus florentiae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202523030	Miyazakivirus NSI	skos:exactMatch	ncbitaxon:3703238	Miyazakivirus NSI	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202523031	Mosigvirus lindsay	skos:exactMatch	ncbitaxon:3703251	Mosigvirus lindsay	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
@@ -206451,6 +206588,7 @@ ictv:MSL41/ICTV202523324	Tsukubavirus xpv2	skos:exactMatch	ncbitaxon:3703631	Tsu
 ictv:MSL41/ICTV202523325	Beograduvirus BsXeu	skos:exactMatch	ncbitaxon:3702536	Beograduvirus BsXeu	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202523326	Beograduvirus myk3	skos:exactMatch	ncbitaxon:3702537	Beograduvirus myk3	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202523327	Xanthovirus neb7	skos:exactMatch	ncbitaxon:3703692	Xanthovirus neb7	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
+ictv:MSL41/ICTV202523328	Orthoflavivirus zilberi	skos:exactMatch	ncbitaxon:3703356	Orthoflavivirus zilberi	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-11-16
 ictv:MSL41/ICTV202523330	Orthoflavivirus mediterranense	skos:exactMatch	ncbitaxon:3703354	Orthoflavivirus mediterranense	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-05-07
 ictv:MSL41/ICTV202523330	TSEV	skos:exactMatch	ncbitaxon:47300	TSEV	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2026-04-23
 ictv:MSL5/ICTV19710003	Picornaviridae	skos:exactMatch	ncbitaxon:12058	Picornaviridae	semapv:LexicalMatching	https://github.com/EVORA-project/virus-taxonomy-mappings	2025-07-29
